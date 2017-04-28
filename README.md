@@ -1,2 +1,2 @@
-# GED
-Gestion numérique des données
+# JAMM
+Java Multimedia Manager
