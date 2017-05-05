@@ -23,8 +23,8 @@ Java Multimedia Manager
 |Estimation|20|
 |As a|un user|
 |I want|enregistrer un livre dans l'appli|
-|So that|je puisse la consulter ou autre|
-|DoD|1 - disposer de champs de saisie pour les donnees obligatoires relatives au livre :<br/><br/>a) titre<br/>b) auteur<br/>c) origine d'acquisition<br/>d) support <br/><br/>et optionnellement : <br/><br/> a) note<br/>b) commentaire<br/>c) achevement<br/>d) langue<br/><br/>2 - disposer d'un bouton pour soummettre la requete et d'un autre pour tout effacer<br/><br/>3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge|
+|So that|je puisse la consulter|
+|DoD|1 - disposer de champs de saisie pour les donnees obligatoires relatives au livre :<br/><br/>a) titre<br/>b) auteur<br/>c) origine d'acquisition<br/>d) support <br/><br/>et optionnellement : <br/><br/> a) note<br/>b) commentaire<br/>c) achevement<br/>d) langue<br/><br/>2 - disposer d'un bouton pour soummettre la requete et d'un autre pour tout effacer<br/><br/>3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs obligatoires sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge|
 
 
 ----------
@@ -37,9 +37,9 @@ Java Multimedia Manager
 |Estimation|13|
 |As a|un user|
 |I want|enregistrer un film dans l'appli|
-|So that|je puisse la consulter ou autre|
+|So that|je puisse la consulter|
 |DoD|1 - disposer de champs de saisie pour les donnees 
-obligatoires relatives au film :<br/><br/>a) titre<br/>b) realisateur<br/>c) origine d'acquisition<br/>d) version (VF, VOSTFR)<br/>e) support<br/><br/>et optionnellement :<br/><br/>a) note<br/>b) commentaire<br/>c) achevement<br/><br/>2 - disposer d'un bouton pour soummettre la requete, et d'un autre pour tout effacer<br/><br/>3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge"|
+obligatoires relatives au film :<br/><br/>a) titre<br/>b) realisateur<br/>c) origine d'acquisition<br/>d) version (VF, VOSTFR)<br/>e) support<br/><br/>et optionnellement :<br/><br/>a) note<br/>b) commentaire<br/>c) achevement<br/><br/>2 - disposer d'un bouton pour soummettre la requete, et d'un autre pour tout effacer<br/><br/>3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs obligatoires sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge"|
 
 
 ----------
@@ -52,8 +52,8 @@ obligatoires relatives au film :<br/><br/>a) titre<br/>b) realisateur<br/>c) ori
 |Estimation|13|
 |As a|un user|
 |I want|enregistrer un jeu video dans l'appli|
-|So that|je puisse la consulter ou autre|
-|DoD|1 - disposer de champs de saisie pour les donnees obligatoires relatives au jeu :<br/><br/>a) titre<br/>b) studio<br/>c) origine d'acquisition<br/>d) support<br/>e) console<br/><br/>et optionnellement :<br/><br/>a) note<br/>b) commentaire<br/>c) achevement<br/>d) langue<br/><br/>2 - disposer d'un bouton pour soummettre la requete, et d'un autre pour tout effacer<br/><br/>3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge|
+|So that|je puisse la consulter|
+|DoD|1 - disposer de champs de saisie pour les donnees obligatoires relatives au jeu :<br/><br/>a) titre<br/>b) studio<br/>c) origine d'acquisition<br/>d) support<br/>e) console<br/><br/>et optionnellement :<br/><br/>a) note<br/>b) commentaire<br/>c) achevement<br/>d) langue<br/><br/>2 - disposer d'un bouton pour soummettre la requete, et d'un autre pour tout effacer<br/><br/>3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs obligatoires sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge|
 
 
 ----------
@@ -66,8 +66,8 @@ obligatoires relatives au film :<br/><br/>a) titre<br/>b) realisateur<br/>c) ori
 |Estimation|13|
 |As a|un user|
 |I want|enregistrer un cd dans l'appli|
-|So that|je puisse la consulter ou autre|
-|DoD|1 - disposer de champs de saisie pour les donnees obligatoires relatives au cd :<br/><br/>a) titre de l'album (ou single)<br/>b) artiste<br/>c) origine d'acquisition<br/>d) support<br/>e) liste des pistes<br/><br/>et optionnellement :<br/><br/>a) note<br/>b) commentaire<br/>c) achevement<br/>d) langue<br/><br/>2 - disposer d'un bouton pour soummettre la requete, et d'un autre pour tout effacer<br/><br/>3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge|
+|So that|je puisse la consulter|
+|DoD|1 - disposer de champs de saisie pour les donnees obligatoires relatives au cd :<br/><br/>a) titre de l'album (ou single)<br/>b) artiste<br/>c) origine d'acquisition<br/>d) support<br/>e) liste des pistes<br/><br/>et optionnellement :<br/><br/>a) note<br/>b) commentaire<br/>c) achevement<br/>d) langue<br/><br/>2 - disposer d'un bouton pour soummettre la requete, et d'un autre pour tout effacer<br/><br/>3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs obligatoires sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge|
 
 
 ----------
