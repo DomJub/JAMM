@@ -3,3 +3,5 @@ fichiers_media/
 .idea/tasks.xml
 *.iml
 out/
+.idea/
+.project
