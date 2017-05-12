@@ -5,7 +5,11 @@ package com.cesi.jamm;
  */
 public class Jeu extends Oeuvre implements CRUDOeuvre {
 
-    private String console;
+    protected String console;
+
+    public Jeu() {
+        this.console = "";
+    }
 
     public Jeu(String console) {
         this.console = console;

@@ -7,6 +7,10 @@ public class CD extends Oeuvre implements CRUDOeuvre{
 
     private String liste_piste;
 
+    public CD(){
+        this.liste_piste = "";
+    }
+
     public CD(String liste_piste) {
         this.liste_piste = liste_piste;
     }
