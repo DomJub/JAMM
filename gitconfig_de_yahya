@@ -1,0 +1,65 @@
+[user]
+	email = ralie.moter@gmail.com
+	name = yahyalexandre
+[push]
+	default = matching
+[alias]
+
+    # status
+    s = status --short
+    sl = status --long
+
+    # ls-files
+    lsf = ls-files
+    lsfd = ls-files --deleted
+    lsfm = ls-files --modified
+    lsfo = ls-files --other
+    lsfod = ls-files --other --directory
+
+    # ls-tree
+    lstrn = ls-tree --name-only HEAD
+
+    # log
+    l = log
+    ls = log --stat
+    lp = log --patch
+    lsp = log --stat --patch
+    lgod = log --graph --oneline --decorate
+    lgodsa = log --graph --oneline --decorate --source --all
+
+    # diff
+    d = diff
+    dw = diff --word-diff
+    ds = diff --stat
+    dc = diff --cached
+    dcw = diff --cached --word-diff
+    dcs = diff --cached --stat
+
+    # add
+    an = add --verbose --dry-run
+    a = add --verbose
+    aa = add --verbose --all
+
+    # commit
+    c = commit --verbose
+    ca = commit --verbose --all
+
+    # push and pull
+    pso = push origin
+    plo = pull origin
+
+    # branch and checkout
+    b = branch
+    ch = checkout
+
+    # git rm
+    rmc = rm --cached
+
+    # git reset
+    r = reset HEAD~
+    rs = reset --soft HEAD~
+    rh = reset --hard HEAD~
+
+    # git submodule
+    sba = submodule add
+    sbd = submodule deinit
