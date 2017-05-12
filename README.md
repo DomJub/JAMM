@@ -13,7 +13,7 @@ Java Multimedia Manager
 |As a|PO|
 |I want|Les dev implementent les bases de l'appli|
 |So that|Ils puissent par la suite etablir l'interface graphique en se basant dessus|
-|DoD|1 - Implementer la classe abstraite Oeuvre possedant les attributs suivants :<br/><br/>.ID<br/>.Nom<br/>.Auteur<br/>.Libelle auteur<br/>.Origine d'acquisition<br/>.Support<br/>.Note<br/>.Note<br/>.Commentaire<br/>.Achevement<br/>.langue<br/><br/>.CRUDOeuvre<br/><br/>2 - Puis des classes filles livres et film sans attributs supplementaires, et la classe jeu avec console comme atribut supllementaire et cd audio avec liste de piste comme attribut supplementaire.<br/><br/>3 - Implementer une classe CRUDOeuvre qui sera agreger a Oeuvre et qui possedera les methodes suivantes :<br/><br/>a) referencer<br/>b) modifier<br/>c) supprimer||
+|DoD|1 - Implementer la classe abstraite Oeuvre possedant les attributs suivants :<br/><br/>- ID<br/>- Nom<br/>- Auteur<br/>- Libelle auteur<br/>- Origine d'acquisition<br/>- Support<br/>- Note<br/>- Commentaire<br/>- Achevement<br/>- Langue<br/>- CRUDOeuvre<br/><br/>2 - Puis des classes filles livres et film sans attributs supplementaires, et la classe jeu avec console comme atribut supllementaire et cd audio avec liste de piste comme attribut supplementaire.<br/><br/>3 - Implementer une classe CRUDOeuvre qui sera agreger a Oeuvre et qui possedera les methodes suivantes :<br/><br/>- referencer<br/>- modifier<br/>- supprimer|
 
 
 ----------
