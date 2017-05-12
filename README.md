@@ -55,8 +55,7 @@ Java Multimedia Manager
 |As a|un user|
 |I want|enregistrer un film dans l'appli|
 |So that|je puisse la consulter|
-|DoD|1 - disposer de champs de saisie pour les donnees 
-obligatoires relatives au film :<br/><br/>a) titre<br/>b) realisateur<br/>c) origine d'acquisition<br/>d) version (VF, VOSTFR)<br/>e) support<br/><br/>et optionnellement :<br/><br/>a) note<br/>b) commentaire<br/>c) achevement<br/><br/>2 - disposer d'un bouton pour soummettre la requete, et d'un autre pour tout effacer<br/><br/>3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs obligatoires sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge"|
+|DoD|1 - disposer de champs de saisie pour les donnees obligatoires relatives au film :<br/><br/>a) titre<br/>b) realisateur<br/>c) origine d'acquisition<br/>d) version (VF, VOSTFR)<br/>e) support<br/><br/>et optionnellement :<br/><br/>a) note<br/>b) commentaire<br/>c) achevement<br/><br/>2 - disposer d'un bouton pour soummettre la requete, et d'un autre pour tout effacer<br/><br/>3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs obligatoires sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge"|
 
 
 ----------
