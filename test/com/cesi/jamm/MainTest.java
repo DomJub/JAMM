@@ -12,12 +12,15 @@ import static org.hamcrest.CoreMatchers.is;
 public class MainTest {
 
     @Test
-    public void should_exist_Oeuvre(){
+    public void should_exist_Oeuvre() {
         Livre livreTest = new Livre();
         Assert.assertThat(livreTest.auteur, is(""));
     }
 
+    @Test
     public void should_exist_CRUDOeuvre(){
-        
+        Jeu jeuTest = new Jeu();
+        jeuTest.seRéférencer();
+        Assert.assertThat(jeuTest.console, is(""));
     }
 }
