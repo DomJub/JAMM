@@ -9,11 +9,11 @@ Java Multimedia Manager
 |---|---|
 |Title|Developper le squellette du programme|
 |Priority|100|
-|Estimation||
+|Estimation|3|
 |As a|PO|
 |I want|Les dev implementent les bases de l'appli|
-|So that|Ils puissnet par la suite etablir l'interface graphique en se basant dessus|
-|DoD|Implementer la classe abstraite Oeuvre possedant les attributs suivants :<br/><br/>a) ID<br/>b) Nom<br/>c) Auteur<br/>d) Libelle auteur<br/>e) Origine d'acquisition<br/>f) Support<br/>g) Note<br/>h) Note<br/>i) Commentaire<br/>j) Achevement<br/>k) langue<br/><br/>2 - Puis des classes filles livres et film sans attributs supplementaires, et la classe jeu avec console comme atribut supllementaire et cd audio avec liste de piste comme attribut supplementaire.<br/><br/>3 - Implementer une classe CRUDOeuvre qui sera agreger a Oeuvre et qui possedera les methodes suivantes :<br/><br/>a) referencer<br/>b) modifier<br/>c) supprimer||
+|So that|Ils puissent par la suite etablir l'interface graphique en se basant dessus|
+|DoD|1 - Implementer la classe abstraite Oeuvre possedant les attributs suivants :<br/><br/>- Nom<br/>- Auteur<br/>- Libelle auteur<br/>- Origine d'acquisition<br/>- Support<br/>- Note<br/>- Commentaire<br/>- Achevement<br/>- Langue<br/><br/><br/>2 - Puis des classes filles livres et film sans attributs supplementaires, et la classe jeu avec console comme atribut supllementaire et cd audio avec liste de piste comme attribut supplementaire.<br/><br/>3 - Implementer une interface CRUDOeuvre qui sera implementer par les 4 classes filles et qui possedera les methodes suivantes :<br/><br/>- referencer<br/>- modifier<br/>- supprimer|
 
 
 ----------
@@ -55,8 +55,7 @@ Java Multimedia Manager
 |As a|un user|
 |I want|enregistrer un film dans l'appli|
 |So that|je puisse la consulter|
-|DoD|1 - disposer de champs de saisie pour les donnees 
-obligatoires relatives au film :<br/><br/>a) titre<br/>b) realisateur<br/>c) origine d'acquisition<br/>d) version (VF, VOSTFR)<br/>e) support<br/><br/>et optionnellement :<br/><br/>a) note<br/>b) commentaire<br/>c) achevement<br/><br/>2 - disposer d'un bouton pour soummettre la requete, et d'un autre pour tout effacer<br/><br/>3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs obligatoires sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge"|
+|DoD|1 - disposer de champs de saisie pour les donnees obligatoires relatives au film :<br/><br/>a) titre<br/>b) realisateur<br/>c) origine d'acquisition<br/>d) version (VF, VOSTFR)<br/>e) support<br/><br/>et optionnellement :<br/><br/>a) note<br/>b) commentaire<br/>c) achevement<br/><br/>2 - disposer d'un bouton pour soummettre la requete, et d'un autre pour tout effacer<br/><br/>3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs obligatoires sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge"|
 
 
 ----------
