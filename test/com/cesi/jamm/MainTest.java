@@ -20,7 +20,7 @@ public class MainTest {
     @Test
     public void should_exist_CRUDOeuvre(){
         Jeu jeuTest = new Jeu();
-        jeuTest.seRéférencer();
+        jeuTest.seReferencer();
         Assert.assertThat(jeuTest.console, is(""));
     }
 }
