@@ -3,7 +3,7 @@ package com.cesi.jamm;
 /**
  * Created by Jub on 12/05/2017.
  */
-abstract class Oeuvre {
+abstract class Oeuvre implements CRUDOeuvre {
     protected String nom;
     protected String auteur;
     protected String libelle_auteur;
@@ -86,5 +86,20 @@ abstract class Oeuvre {
 
     public void setCommentaire(String commentaire) {
         this.commentaire = commentaire;
+    }
+
+    @Override
+    public void seReferencer() {
+
+    }
+
+    @Override
+    public void etreMisAJour() {
+
+    }
+
+    @Override
+    public void etreSupprime() {
+
     }
 }
