@@ -29,14 +29,14 @@ Java Multimedia Manager
 ----------
 
 
-| ID           | 1                                   |
-| ------------ | ----------------------------------- |
-| Title        | Ajouter un livre                    |
-| Priority     | 99                                  |
-| Estimation   | 20                                  |
-| As a         | un user                             |
-| I want       | enregistrer un livre dans l'appli   |
-| So that      | je puisse la consulter              |
+| ID           | 1                                          |
+| ------------ | -----------------------------------        |
+| Title        | Acceder a une fenetre de creation de livre |
+| Priority     | 99                                         |
+| Estimation   | 20                                         |
+| As a         | un user                                    |
+| I want       | enregistrer un livre dans l'appli          |
+| So that      | je puisse la consulter                     |
 
 ### DoD
 
@@ -62,14 +62,48 @@ d) langue
 ----------
 
 
-| ID           | 3                                  |
-| ------------ | ---------------------------------- |
-| Title        | Ajouter un film                    |
-| Priority     | 99                                 |
-| Estimation   | 13                                 |
-| As a         | un user                            |
-| I want       | enregistrer un film dans l'appli   |
-| So that      | je puisse la consulter             |
+| ID           | 2                                             |
+| ------------ | --------------------------------              |
+| Title        | Acceder a une fenetre de creation de cd audio |
+| Priority     | 99                                            |
+| Estimation   | 13                                            |
+| As a         | un user                                       |
+| I want       | enregistrer un cd dans l'appli                |
+| So that      | je puisse la consulter                        |
+
+### DoD
+
+1 - disposer de champs de saisie pour les donnees obligatoires relatives au cd :
+
+a) titre de l'album (ou single)
+b) artiste
+c) origine d'acquisition
+d) support
+e) liste des pistes
+
+et optionnellement :
+
+a) note
+b) commentaire
+c) achevement
+d) langue
+
+2 - disposer d'un bouton pour soummettre la requete, et d'un autre pour tout effacer
+
+3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs obligatoires sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge
+
+
+----------
+
+
+| ID           | 3                                         |
+| ------------ | ----------------------------------        |
+| Title        | Acceder a une fenetre de creation de film |
+| Priority     | 99                                        |
+| Estimation   | 13                                        |
+| As a         | un user                                   |
+| I want       | enregistrer un film dans l'appli          |
+| So that      | je puisse la consulter                    |
 
 ### DoD
 
@@ -97,7 +131,7 @@ c) achevement
 
 | ID         | 4                                     |
 |------------|---------------------------------------|
-| Title      | Ajouter un jeu video                  |
+| Title      | Acceder a une fenetre de creation de jeu video                  |
 | Priority   | 99                                    |
 | Estimation | 13                                    |
 | As a       | un user                               |
@@ -113,40 +147,6 @@ b) studio
 c) origine d'acquisition
 d) support
 e) console
-
-et optionnellement :
-
-a) note
-b) commentaire
-c) achevement
-d) langue
-
-2 - disposer d'un bouton pour soummettre la requete, et d'un autre pour tout effacer
-
-3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs obligatoires sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge
-
-
-----------
-
-
-| ID           | 2                                |
-| ------------ | -------------------------------- |
-| Title        | Ajouter un cd audio              |
-| Priority     | 99                               |
-| Estimation   | 13                               |
-| As a         | un user                          |
-| I want       | enregistrer un cd dans l'appli   |
-| So that      | je puisse la consulter           |
-
-### DoD
-
-1 - disposer de champs de saisie pour les donnees obligatoires relatives au cd :
-
-a) titre de l'album (ou single)
-b) artiste
-c) origine d'acquisition
-d) support
-e) liste des pistes
 
 et optionnellement :
 
