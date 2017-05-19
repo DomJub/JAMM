@@ -52,7 +52,8 @@
  c) film
  d) jeu video
  
- 2 - rebaculer vers la fenetres correspondantes (voir les stories 1, 2, 3, 4)
+ 2 - rebaculer vers la fenetres correspondantes (voir les stories 1, 2, 3, 4).
+ Voir le png JAMM_Accueil.png, le menu "Ajouter"
 
 
 ----------
@@ -85,7 +86,8 @@ d) langue
 
 2 - disposer d'un bouton pour soummettre la requete et d'un autre pour tout effacer
 
-3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs obligatoires sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge
+3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs obligatoires sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge.
+Voir le png JAMM_Ajout livre
 
 
 ----------
@@ -119,7 +121,8 @@ d) langue
 
 2 - disposer d'un bouton pour soummettre la requete, et d'un autre pour tout effacer
 
-3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs obligatoires sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge
+3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs obligatoires sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge.
+Voir le png JAMM_Ajout audio
 
 
 ----------
@@ -152,8 +155,8 @@ c) achevement
 
 2 - disposer d'un bouton pour soummettre la requete, et d'un autre pour tout effacer
 
-3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs obligatoires sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge"
-
+3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs obligatoires sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge".
+Voir le png JAMM_Ajout film
 
 ----------
 
@@ -186,7 +189,8 @@ d) langue
 
 2 - disposer d'un bouton pour soummettre la requete, et d'un autre pour tout effacer
 
-3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs obligatoires sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge
+3 - lorsqu'un ou plusieurs champs manquent, un message d'erreur "Un ou plusieurs champs obligatoires sont manquant, vueillez les remplir", le focus est donnee au premier champs vide, et tous les champs vides sont surlignes en rouge.
+Voir le png JAMM_Ajout jeu video
 
 
 ----------
