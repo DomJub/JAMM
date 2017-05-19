@@ -41,8 +41,10 @@
                               </ImageView>
                               <MenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Menu">
                                 <items>
-                                  <MenuItem mnemonicParsing="false" text="Action 1" />
-                                  <MenuItem mnemonicParsing="false" text="Action 2" />
+                                  <MenuItem mnemonicParsing="false" text="Livres" />
+                                  <MenuItem mnemonicParsing="false" text="Audio" />
+                                    <MenuItem mnemonicParsing="false" text="Videos" />
+                                    <MenuItem mnemonicParsing="false" text="Jeux" />
                                 </items>
                               </MenuButton>
                               <TextField prefHeight="25.0" prefWidth="289.0" />
