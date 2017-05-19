@@ -5,18 +5,18 @@ Java Multimedia Manager
 ----------
 
 
-| ID         | 0                                                  |
-|------------|----------------------------------------------------|
-| Title      | Acceder a une fenetre de creation d'oeuvre         |
-| Priority   | 100                                                |
-| Estimation | 8                                                  |
-| As a       | un user                                            |
-| I want     | pouvoir acceder a une fenetre de creation d'oeuvre |
-| So that    | d'enregistrer un oeuvre dans l'appli               |
+| ID           | 0                                                    |
+| ------------ | ---------------------------------------------------- |
+| Title        | Acceder a un menu de creation d'oeuvre               |
+| Priority     | 100                                                  |
+| Estimation   | 8                                                    |
+| As a         | un user                                              |
+| I want       | pouvoir acceder a un menu de creation d'oeuvre       |
+| So that      | d'enregistrer un oeuvre dans l'appli                 |
 
 ### DoD :
 
- 1 - disposer d'un bouton different pour chaque type d'oeuvre :
+ 1 - disposer d'une entree dans le menu differente pour chaque type d'oeuvre :
  
  a) livre
  b) cd audio
@@ -29,14 +29,14 @@ Java Multimedia Manager
 ----------
 
 
-| ID         | 1                                 |
-|------------|-----------------------------------|
-| Title      | Ajouter un livre                  |
-| Priority   | 99                                |
-| Estimation | 20                                |
-| As a       | un user                           |
-| I want     | enregistrer un livre dans l'appli |
-| So that    | je puisse la consulter            |
+| ID           | 1                                   |
+| ------------ | ----------------------------------- |
+| Title        | Ajouter un livre                    |
+| Priority     | 99                                  |
+| Estimation   | 20                                  |
+| As a         | un user                             |
+| I want       | enregistrer un livre dans l'appli   |
+| So that      | je puisse la consulter              |
 
 ### DoD
 
@@ -62,14 +62,14 @@ d) langue
 ----------
 
 
-| ID         | 3                                |
-|------------|----------------------------------|
-| Title      | Ajouter un film                  |
-| Priority   | 99                               |
-| Estimation | 13                               |
-| As a       | un user                          |
-| I want     | enregistrer un film dans l'appli |
-| So that    | je puisse la consulter           |
+| ID           | 3                                  |
+| ------------ | ---------------------------------- |
+| Title        | Ajouter un film                    |
+| Priority     | 99                                 |
+| Estimation   | 13                                 |
+| As a         | un user                            |
+| I want       | enregistrer un film dans l'appli   |
+| So that      | je puisse la consulter             |
 
 ### DoD
 
@@ -129,14 +129,14 @@ d) langue
 ----------
 
 
-| ID         | 2                              |
-|------------|--------------------------------|
-| Title      | Ajouter un cd audio            |
-| Priority   | 99                             |
-| Estimation | 13                             |
-| As a       | un user                        |
-| I want     | enregistrer un cd dans l'appli |
-| So that    | je puisse la consulter         |
+| ID           | 2                                |
+| ------------ | -------------------------------- |
+| Title        | Ajouter un cd audio              |
+| Priority     | 99                               |
+| Estimation   | 13                               |
+| As a         | un user                          |
+| I want       | enregistrer un cd dans l'appli   |
+| So that      | je puisse la consulter           |
 
 ### DoD
 
@@ -163,14 +163,14 @@ d) langue
 ----------
 
 
-| ID         | 15                                     |
-|------------|----------------------------------------|
-| Title      | Afficher les oeuvres dans un tableau   |
-| Priority   | 90                                     |
-| Estimation | 8                                      |
-| As a       | un user                                |
-| I want     | visualiser mes oeuvres enregistrer     |
-| So that    | connaitre le contenu de ma mediatheque |
+| ID           | 15                                       |
+| ------------ | ---------------------------------------- |
+| Title        | Afficher les oeuvres dans un tableau     |
+| Priority     | 90                                       |
+| Estimation   | 8                                        |
+| As a         | un user                                  |
+| I want       | visualiser mes oeuvres enregistrer       |
+| So that      | connaitre le contenu de ma mediatheque   |
 
 ### DoD
 
@@ -183,14 +183,14 @@ Pour obtenir les renseignement en detail voir la story "Afficher les details d'u
 ----------
 
 
-| ID         | 5                                       |
-|------------|-----------------------------------------|
-| Title      | Afficher les details d'une oeuvre       |
-| Priority   | 90                                      |
-| Estimation | 8                                       |
-| As a       | un user                                 |
-| I want     | visualiser les details d'une oeuvre     |
-| So that    | je puisse les consulter et les modifier |
+| ID           | 5                                         |
+| ------------ | ----------------------------------------- |
+| Title        | Afficher les details d'une oeuvre         |
+| Priority     | 90                                        |
+| Estimation   | 8                                         |
+| As a         | un user                                   |
+| I want       | visualiser les details d'une oeuvre       |
+| So that      | je puisse les consulter et les modifier   |
 
 ### DoD
 
@@ -206,14 +206,14 @@ d) jeu video
 ----------
 
 
-| ID         | 14                                           |
-|------------|----------------------------------------------|
-| Title      | Rechercher parmi les ouevres                 |
-| Priority   | 80                                           |
-| Estimation | 20                                           |
-| As a       | un user                                      |
-| I want     | acceder a des ouvres en fonction de criteres |
-| So that    | je puisse consulter mes ouvres eficacement   |
+| ID           | 14                                             |
+| ------------ | ---------------------------------------------- |
+| Title        | Rechercher parmi les ouevres                   |
+| Priority     | 80                                             |
+| Estimation   | 20                                             |
+| As a         | un user                                        |
+| I want       | acceder a des ouvres en fonction de criteres   |
+| So that      | je puisse consulter mes ouvres eficacement     |
 
 ### DoD
 
@@ -227,14 +227,14 @@ d) jeu video
 ----------
 
 
-| ID         | 16                                                 |
-|------------|----------------------------------------------------|
-| Title      | Modifier une oeuvre                                |
-| Priority   | 50                                                 |
-| Estimation | 8                                                  |
-| As a       | un user                                            |
-| I want     | Modifier les details d'une oeuvre                  |
-| So that    | je puisse les mettre a jour ou corriger une erreur |
+| ID           | 16                                                   |
+| ------------ | ---------------------------------------------------- |
+| Title        | Modifier une oeuvre                                  |
+| Priority     | 50                                                   |
+| Estimation   | 8                                                    |
+| As a         | un user                                              |
+| I want       | Modifier les details d'une oeuvre                    |
+| So that      | je puisse les mettre a jour ou corriger une erreur   |
 
 ### DoD
 
@@ -258,14 +258,14 @@ d) jeu video
 ----------
 
 
-| ID         | 9                                |
-|------------|----------------------------------|
-| Title      | Supprimer une oeuvre             |
-| Priority   | 25                               |
-| Estimation | 5                                |
-| As a       | un user                          |
-| I want     | supprimer un oeuvre dans l'appli |
-| So that    | de ne plus le referencer         |
+| ID           | 9                                  |
+| ------------ | ---------------------------------- |
+| Title        | Supprimer une oeuvre               |
+| Priority     | 25                                 |
+| Estimation   | 5                                  |
+| As a         | un user                            |
+| I want       | supprimer un oeuvre dans l'appli   |
+| So that      | de ne plus le referencer           |
 
 ### DoD
 
@@ -280,13 +280,13 @@ d) jeu video
 ----------
 
 
-| ID         | 0_1                                  |
-|------------|--------------------------------------|
-| Title      | Developper l'interface               |
-| Priority   | 100                                  |
-| Estimation |                                      |
-| As a       | un user                              |
-| I want     | acceder au fonctionalites de l'appli |
-| So that    | de l'utiliser de maniere agreable    |
+| ID           | 0_1                                    |
+| ------------ | -------------------------------------- |
+| Title        | Developper l'interface                 |
+| Priority     | 100                                    |
+| Estimation   |                                        |
+| As a         | un user                                |
+| I want       | acceder au fonctionalites de l'appli   |
+| So that      | de l'utiliser de maniere agreable      |
 
  ### DoD ?
