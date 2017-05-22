@@ -1,9 +1,9 @@
-package sample;
+package sample.model;
 
 /**
  * Created by Jub on 12/05/2017.
  */
-abstract class Oeuvre implements CRUDOeuvre {
+public abstract class Oeuvre {
     protected String nom;
     protected String auteur;
     protected String libelle_auteur;
@@ -88,18 +88,5 @@ abstract class Oeuvre implements CRUDOeuvre {
         this.commentaire = commentaire;
     }
 
-    @Override
-    public void seReferencer() {
 
-    }
-
-    @Override
-    public void etreMisAJour() {
-
-    }
-
-    @Override
-    public void etreSupprime() {
-
-    }
 }

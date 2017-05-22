@@ -1,4 +1,4 @@
-package sample;
+package sample.repository;
 
 import java.sql.*;
 import java.text.DateFormat;
@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 /**
  * Created by Philippe on 18/05/2017.
  */
-public class Connect {
+public abstract class Connect {
 
 	public static final String COM_MYSQL_JDBC_DRIVER = "com.mysql.jdbc.Driver";
 	private final static String user = "java";
