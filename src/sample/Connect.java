@@ -42,36 +42,7 @@ public class Connect {
         conn.close();
     }
 
-    @SuppressWarnings("unused")
-	public void getAllUsers() throws SQLException {
-        Statement statement = null;
-        String selectTableSQL = "SELECT USER_ID, USERNAME from DBUSER";
-
-        try {
-            conn = getConnection();
-            statement = conn.createStatement();
-            System.out.println(selectTableSQL);
-
-            ResultSet rs = statement.executeQuery(selectTableSQL);
-
-            while (rs.next()) {
-                String userid = rs.getString("USER_ID");
-                String username = rs.getString("USERNAME");
-
-                log("userid : " + userid + " --> username : " + username);
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        } finally {
-            if (statement != null) {
-                statement.close();
-            }
-            if (conn != null) {
-                closeConnection();
-            }
-        }
-    }
-
+ 
     public static void log(String message) {
         DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss,SSS");
         System.out.println("[" + formatter.format(new Timestamp(new java.util.Date().getTime())) + "] : " + message);

@@ -36,10 +36,10 @@
                            <items>
                               <ImageView fitHeight="117.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@jammlogo.jpg" />
+                                    <Image url="@../jammlogo.jpg" />
                                  </image>
                               </ImageView>
-                              <MenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Menu" >
+                              <MenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Menu">
                                 <items>
                                   <MenuItem mnemonicParsing="false" text="Livres" />
                                   <MenuItem mnemonicParsing="false" text="Audio" />
