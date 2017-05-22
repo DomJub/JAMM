@@ -66,8 +66,8 @@
                                  <content>
                                     <TableView fx:id="tableListing" prefHeight="304.0" prefWidth="770.0">
                                       <columns>
-                                        <TableColumn prefWidth="75.0" text="C1" />
-                                        <TableColumn prefWidth="75.0" text="C2" />
+                                        <TableColumn prefWidth="75.0" text="Titre" />
+                                        <TableColumn prefWidth="75.0" text="Note" />
                                       </columns>
                                     </TableView>
                                  </content>

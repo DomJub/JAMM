@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 /**
  * Created by Philippe on 18/05/2017.
  */
-public abstract class Connect {
+public abstract class AbstractConnect {
 
 	public static final String COM_MYSQL_JDBC_DRIVER = "com.mysql.jdbc.Driver";
 	private final static String user = "java";
@@ -16,7 +16,7 @@ public abstract class Connect {
 	private static String host = "192.168.23.105:3306";
 	static Connection conn;
 
-	public Connect() throws ClassNotFoundException, SQLException {
+	public AbstractConnect() throws ClassNotFoundException, SQLException {
 		try {
 			Class.forName(COM_MYSQL_JDBC_DRIVER);
 			Connection conn = null;
