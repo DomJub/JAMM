@@ -22,7 +22,7 @@ public class Connect {
 			Connection conn = null;
 
 			conn = getConnection();
-			closeConnection();
+			//closeConnection();
 		} catch (ClassNotFoundException e) {
 			log(e.getMessage());
 		}
