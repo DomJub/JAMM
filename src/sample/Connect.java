@@ -12,9 +12,9 @@ public class Connect {
 	public static final String COM_MYSQL_JDBC_DRIVER = "com.mysql.jdbc.Driver";
 	private final static String user = "java";
 	private final static String psswd = "mdp";
-	private String dbname = "tchat";
-	private String host = "192.168.23.105:3306";
-	Connection conn;
+	private static String dbname = "tchat";
+	private static String host = "192.168.23.105:3306";
+	static Connection conn;
 
 	public Connect() throws ClassNotFoundException, SQLException {
 		try {
@@ -28,7 +28,7 @@ public class Connect {
 		}
 	}
 
-	public Connection getConnection() throws SQLException {
+	public static Connection getConnection() throws SQLException {
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://" + host + "/" + dbname, user, psswd);
 		} catch (SQLException e) {

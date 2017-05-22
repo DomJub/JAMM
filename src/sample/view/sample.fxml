@@ -64,7 +64,7 @@
                           <tabs>
                             <Tab closable="false" text="   Listing   ">
                                  <content>
-                                    <TableView prefHeight="304.0" prefWidth="770.0">
+                                    <TableView fx:id="tableListing" prefHeight="304.0" prefWidth="770.0">
                                       <columns>
                                         <TableColumn prefWidth="75.0" text="C1" />
                                         <TableColumn prefWidth="75.0" text="C2" />
