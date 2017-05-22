@@ -23,7 +23,7 @@ public class Controller implements Initializable{
 		try {
 			Connection conn = Connect.getConnection();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			System.err.println(e.getMessage());
 		}
 		
