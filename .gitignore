@@ -103,5 +103,5 @@ fabric.properties
 
 .idea/
 GED.iml
-src/
+
 /target/
