@@ -1,107 +1,109 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Eclipse template
 
-.metadata
-bin/
-tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.settings/
-.loadpath
-.recommenders
+intellij-workspace/.metadata
+intellij-workspace/bin/
+intellij-workspace/tmp/
+intellij-workspace/*.tmp
+intellij-workspace/*.bak
+intellij-workspace/*.swp
+intellij-workspace/*~.nib
+intellij-workspace/local.properties
+intellij-workspace/.settings/
+intellij-workspace/.loadpath
+intellij-workspace/.recommenders
 
 # Eclipse Core
-.project
+intellij-workspace/.project
 
 # External tool builders
-.externalToolBuilders/
+intellij-workspace/.externalToolBuilders/
 
 # Locally stored "Eclipse launch configurations"
-*.launch
+intellij-workspace/*.launch
 
 # PyDev specific (Python IDE for Eclipse)
-*.pydevproject
+intellij-workspace/*.pydevproject
 
 # CDT-specific (C/C++ Development Tooling)
-.cproject
+intellij-workspace/.cproject
 
 # JDT-specific (Eclipse Java Development Tools)
-.classpath
+intellij-workspace/.classpath
 
 # Java annotation processor (APT)
-.factorypath
+intellij-workspace/.factorypath
 
 # PDT-specific (PHP Development Tools)
-.buildpath
+intellij-workspace/.buildpath
 
 # sbteclipse plugin
-.target
+intellij-workspace/.target
 
 # Tern plugin
-.tern-project
+intellij-workspace/.tern-project
 
 # TeXlipse plugin
-.texlipse
+intellij-workspace/.texlipse
 
 # STS (Spring Tool Suite)
-.springBeans
+intellij-workspace/.springBeans
 
 # Code Recommenders
-.recommenders/
+intellij-workspace/.recommenders/
 
 # Scala IDE specific (Scala & Java development for Eclipse)
-.cache-main
-.scala_dependencies
-.worksheet
+intellij-workspace/.cache-main
+intellij-workspace/.scala_dependencies
+intellij-workspace/.worksheet
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/dictionaries
+intellij-workspace/.idea/**/workspace.xml
+intellij-workspace/.idea/**/tasks.xml
+intellij-workspace/.idea/dictionaries
 
 # Sensitive or high-churn files:
-.idea/**/dataSources/
-.idea/**/dataSources.ids
-.idea/**/dataSources.xml
-.idea/**/dataSources.local.xml
-.idea/**/sqlDataSources.xml
-.idea/**/dynamic.xml
-.idea/**/uiDesigner.xml
+intellij-workspace/.idea/**/dataSources/
+intellij-workspace/.idea/**/dataSources.ids
+intellij-workspace/.idea/**/dataSources.xml
+intellij-workspace/.idea/**/dataSources.local.xml
+intellij-workspace/.idea/**/sqlDataSources.xml
+intellij-workspace/.idea/**/dynamic.xml
+intellij-workspace/.idea/**/uiDesigner.xml
 
 # Gradle:
-.idea/**/gradle.xml
-.idea/**/libraries
+intellij-workspace/.idea/**/gradle.xml
+intellij-workspace/.idea/**/libraries
 
 # Mongo Explorer plugin:
-.idea/**/mongoSettings.xml
+intellij-workspace/.idea/**/mongoSettings.xml
 
 ## File-based project format:
-*.iws
+intellij-workspace/*.iws
 
 ## Plugin-specific files:
 
 # IntelliJ
-/out/
+intellij-workspace/out/
 
 # mpeltonen/sbt-idea plugin
-.idea_modules/
+intellij-workspace/.idea_modules/
 
 # JIRA plugin
-atlassian-ide-plugin.xml
+intellij-workspace/atlassian-ide-plugin.xml
 
 # Crashlytics plugin (for Android Studio and IntelliJ)
-com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
-fabric.properties
+intellij-workspace/com_crashlytics_export_strings.xml
+intellij-workspace/crashlytics.properties
+intellij-workspace/crashlytics-build.properties
+intellij-workspace/fabric.properties
 
-.idea/
+intellij-workspace/.idea/
 
 
-/target/
+intellij-workspace/target/
+
+intellij-workspace/*.iml
