@@ -41,10 +41,10 @@
                                         </ImageView>
                                         <MenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Menu">
                                             <items>
-                                                <MenuItem fx:id="livresBtn" mnemonicParsing="false" onAction="#openAddBookView" text="Livres" />
-                                                <MenuItem mnemonicParsing="false" text="Audio" />
-                                                <MenuItem mnemonicParsing="false" text="Videos" />
-                                                <MenuItem mnemonicParsing="false" text="Jeux" />
+                                                <MenuItem fx:id="bookBtn" mnemonicParsing="false" onAction="#openAddBookView" text="Livres" />
+                                                <MenuItem fx:id="audioBtn" mnemonicParsing="false" onAction="#openAddAudioView" text="Audio" />
+                                                <MenuItem fx:id="movieBtn" mnemonicParsing="false" onAction="#openAddMovieView" text="Videos" />
+                                                <MenuItem fx:id="gameBtn" mnemonicParsing="false" onAction="#openAddVideoGameView" text="Jeux" />
                                             </items>
                                         </MenuButton>
                                         <TextField prefHeight="25.0" prefWidth="289.0" />
