@@ -106,4 +106,4 @@ intellij-workspace/.idea/
 
 intellij-workspace/target/
 
-intellij-workspace/*.iml
+intellij-workspace/**/*.iml
