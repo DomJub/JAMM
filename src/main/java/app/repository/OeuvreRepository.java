@@ -1,6 +1,6 @@
 package app.repository;
 
-import sample.model.Oeuvre;
+import app.model.Oeuvre;
 
 /**
  * Created by Philippe on 22/05/2017.

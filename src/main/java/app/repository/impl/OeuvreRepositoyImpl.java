@@ -1,9 +1,9 @@
 package app.repository.impl;
 
-import sample.model.Film;
-import sample.model.Oeuvre;
-import sample.repository.AbstractConnect;
-import sample.repository.OeuvreRepository;
+import app.model.Film;
+import app.model.Oeuvre;
+import app.repository.AbstractConnect;
+import app.repository.OeuvreRepository;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
