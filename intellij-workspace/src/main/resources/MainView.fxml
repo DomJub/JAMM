@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="app.view.Controller">
+<GridPane alignment="center" hgap="10" maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.MainViewController">
     <columnConstraints>
         <ColumnConstraints />
     </columnConstraints>
@@ -66,13 +66,14 @@
                                             <content>
                                                 <TableView fx:id="tableListing" prefHeight="304.0" prefWidth="770.0">
                                                     <columns>
-                                                        <TableColumn fx:id="Titre" prefWidth="75.0" text="Titre" />
-                                                        <TableColumn fx:id="Note" prefWidth="75.0" text="Note" />
+                                                        <TableColumn fx:id="titre" prefWidth="150.0" text="Titre" />
+                                                        <TableColumn fx:id="note" minWidth="0.0" prefWidth="179.0" text="Note" />
+                                                        <TableColumn fx:id="origine" prefWidth="115.0" text="Origine" />
                                                     </columns>
                                                 </TableView>
                                             </content>
                                         </Tab>
-                                        <Tab text="Créer   " />
+
                                     </tabs>
                                 </TabPane>
                                 <Button layoutX="49.0" layoutY="428.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" text="Supprimer" />

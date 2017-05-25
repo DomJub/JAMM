@@ -4,40 +4,41 @@ package app.model;
  * Created by Jub on 12/05/2017.
  */
 public abstract class Oeuvre {
-    protected String nom;
+    protected String titre;
     protected String auteur;
     protected String libelle_auteur;
-    protected String origine_acquisition;
+    protected String origine;
     protected String support;
     protected int note;
     protected String commentaire;
 
     public Oeuvre() {
-        this.nom = "";
+        this.titre = "";
         this.auteur = "";
         this.libelle_auteur = "";
-        this.origine_acquisition = "";
+        this.origine = "";
         this.support = "";
         this.note = 0;
         this.commentaire = "";
     }
 
-    public Oeuvre(String nom, String auteur, String libelle_auteur, String origine_acquisition, String support, int note, String commentaire) {
-        this.nom = nom;
+    public Oeuvre(String titre, String auteur, String libelle_auteur, String origine, String support, int note, String commentaire) {
+        this.titre = titre;
         this.auteur = auteur;
         this.libelle_auteur = libelle_auteur;
-        this.origine_acquisition = origine_acquisition;
+        this.origine = origine;
         this.support = support;
         this.note = note;
         this.commentaire = commentaire;
     }
 
-    public String getNom() {
-        return nom;
+    public String getTitre() {
+        return titre;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public Oeuvre setTitre(String titre) {
+        this.titre = titre;
+        return this;
     }
 
     public String getAuteur() {
@@ -56,12 +57,12 @@ public abstract class Oeuvre {
         this.libelle_auteur = libelle_auteur;
     }
 
-    public String getOrigine_acquisition() {
-        return origine_acquisition;
+    public String getOrigine() {
+        return origine;
     }
 
-    public void setOrigine_acquisition(String origine_acquisition) {
-        this.origine_acquisition = origine_acquisition;
+    public void setOrigine(String origine) {
+        this.origine = origine;
     }
 
     public String getSupport() {

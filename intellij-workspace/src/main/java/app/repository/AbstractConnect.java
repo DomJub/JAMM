@@ -10,19 +10,15 @@ import java.text.SimpleDateFormat;
 public abstract class AbstractConnect {
 
 	public static final String COM_MYSQL_JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	private final static String user = "java";
-	private final static String psswd = "mdp";
-	private static String dbname = "tchat";
-	private static String host = "127.0.0.1:3306";
+	private final static String user = "dbuser";
+	private final static String psswd = "dbuser";
+	private static String dbname = "jamm";
+	private static String host = "192.168.1.19:3306";
 	static Connection conn;
 
 	public AbstractConnect() throws ClassNotFoundException, SQLException {
 		try {
 			Class.forName(COM_MYSQL_JDBC_DRIVER);
-			Connection conn = null;
-
-			conn = getConnection();
-			//closeConnection();
 		} catch (ClassNotFoundException e) {
 			log(e.getMessage());
 		}
@@ -33,6 +29,7 @@ public abstract class AbstractConnect {
 			conn = DriverManager.getConnection("jdbc:mysql://" + host + "/" + dbname, user, psswd);
 		} catch (SQLException e) {
 			log("Connexion failed!");
+			e.printStackTrace();
 		}
 		return conn;
 	}
