@@ -1,5 +1,10 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Eclipse template
+.settings
+.idea/
+out
+*.iml
+.classpath
 
 intellij-workspace/.metadata
 intellij-workspace/bin/
