@@ -30,12 +30,12 @@ public class OeuvreRepositoyImpl implements OeuvreRepository {
 			PreparedStatement preparedStatement = null;
 			ResultSet rs = null;
 
-			String query = "SELECT * FROM oeuvre";
+			String query = "SELECT * FROM oeuvre ORDER BY id_oeuvre DESC LIMIT 10";
 			preparedStatement = conn.prepareStatement(query);
 			rs = preparedStatement.executeQuery();
 
 			while (rs.next()) {
-				
+
 				 OeuvreLite oeuvreLite = new OeuvreLite();
 				 oeuvreLite.setTitre(rs.getString("titre"));
 				 oeuvreLite.setNote((rs.getInt("note")));

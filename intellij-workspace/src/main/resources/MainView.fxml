@@ -70,6 +70,9 @@
                                                         <TableColumn fx:id="note" minWidth="0.0" prefWidth="179.0" text="Note" />
                                                         <TableColumn fx:id="origine" prefWidth="115.0" text="Origine" />
                                                     </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
                                                 </TableView>
                                             </content>
                                         </Tab>
