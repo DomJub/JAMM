@@ -1,2 +1,2 @@
 #!/bin/sh
-cd intellij-workspace/
+cd $TRAVIS_BUILD_DIR/intellij-workspace/

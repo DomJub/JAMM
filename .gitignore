@@ -6,6 +6,9 @@ out
 *.iml
 .classpath
 
+JAMM_balsamiq/
+bin
+
 intellij-workspace/.metadata
 intellij-workspace/bin/
 intellij-workspace/tmp/
