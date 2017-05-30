@@ -2,7 +2,5 @@ language: java
 jdk:
     - oraclejdk8
 before_script: 
-    - ls
-    - echo "test"
     - cp DBConfig.java intellij-workspace/src/main/java/app/repository/DBConfig.java -v
     - cd intellij-workspace/
