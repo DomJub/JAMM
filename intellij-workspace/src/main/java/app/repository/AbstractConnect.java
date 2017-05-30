@@ -13,8 +13,11 @@ public abstract class AbstractConnect {
 	private final static String user = "dbuser";
 	private final static String psswd = "dbuser";
 	private static String dbname = "jamm";
-
 	private static String host = "10.1.2.157:3306";
+//	private final static String user = "root";
+//	private final static String psswd = "root";
+//	private static String dbname = "jamm";
+//	private static String host = "127.0.0.1";
 
 	static Connection conn;
 
