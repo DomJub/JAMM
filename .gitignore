@@ -1,11 +1,13 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Eclipse template
 .settings
+.project
 .idea/
 out
 *.iml
 .classpath
 
+intellij-workspace/src/main/java/app/repository/DBConfig.java
 JAMM_balsamiq/
 bin
 
