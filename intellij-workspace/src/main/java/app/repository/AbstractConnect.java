@@ -14,11 +14,12 @@ public abstract class AbstractConnect {
     private final static String psswd = "dbuser";
     static Connection conn;
     private static String dbname = "jamm";
-//	private final static String user = "root";
-//	private final static String psswd = "root";
-//	private static String dbname = "jamm";
-//	private static String host = "127.0.0.1";
-    private static String host = "10.1.2.157:3306";
+	private static String host = "10.1.2.157:3306";
+
+	//	private final static String user = "root";
+    //	private final static String psswd = "root";
+    //	private static String dbname = "jamm";
+    //	private static String host = "127.0.0.1";
 
     public AbstractConnect() throws ClassNotFoundException, SQLException {
         try {
