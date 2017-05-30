@@ -23,10 +23,10 @@
     <TextField fx:id="origineTf" layoutX="352.0" layoutY="78.0" prefHeight="25.0" prefWidth="215.0" />
     <Slider fx:id="noteSl" blockIncrement="1.0" layoutX="348.0" layoutY="129.0" majorTickUnit="1.0" max="5.0" minorTickCount="1" prefHeight="14.0" prefWidth="215.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
     <ChoiceBox fx:id="genreCb" layoutX="81.0" layoutY="78.0" prefWidth="150.0" />
-    <ChoiceBox fx:id="consoleCb" layoutX="359.0" layoutY="29.0" prefHeight="25.0" prefWidth="179.0" />
-    <Button layoutX="242.0" layoutY="78.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="ajout" />
-    <Button layoutX="551.0" layoutY="29.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" text="ajout" />
-    <Button layoutX="243.0" layoutY="29.0" mnemonicParsing="false" text="ajout" />
+    <ChoiceBox fx:id="consoleCb" layoutX="359.0" layoutY="29.0" prefHeight="25.0" prefWidth="171.0" />
+    <Button fx:id="addGenreBt" layoutX="242.0" layoutY="78.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="45.0" text="ajout" />
+    <Button fx:id="addConsoleBt" layoutX="546.0" layoutY="29.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0" text="ajout" />
+    <Button fx:id="addStudioBt" layoutX="243.0" layoutY="29.0" mnemonicParsing="false" text="ajout" />
     <ChoiceBox fx:id="studioCb" layoutX="81.0" layoutY="29.0" prefWidth="150.0" />
     <Label layoutX="25.0" layoutY="354.0" text="Achevement" />
     <Label layoutX="351.0" layoutY="354.0" text="Langue" />
