@@ -26,21 +26,19 @@ public class OeuvreRepositoyImpl implements OeuvreRepository {
 	public ObservableList<Oeuvre> getAll() {
 		ObservableList<Oeuvre> result = FXCollections.observableArrayList();
 		try {
-			AbstractConnect.getConnection();
-			PreparedStatement preparedStatement = null;
-			ResultSet rs = null;
+			//AbstractConnect.getConnection();
 
-			String query = "SELECT * FROM oeuvre ORDER BY id_oeuvre DESC LIMIT 10";
-			preparedStatement = conn.prepareStatement(query);
-			rs = preparedStatement.executeQuery();
+			ResultSet rs = conn
+					.prepareStatement("SELECT * FROM oeuvre ORDER BY id_oeuvre DESC LIMIT 10")
+					.executeQuery();
 
 			while (rs.next()) {
 
-				 OeuvreLite oeuvreLite = new OeuvreLite();
-				 oeuvreLite.setTitre(rs.getString("titre"));
-				 oeuvreLite.setNote((rs.getInt("note")));
-				 oeuvreLite.setOrigine(rs.getString("origine"));
-				 result.add(oeuvreLite);
+				 OeuvreLite o = new OeuvreLite();
+				 o.setTitre(rs.getString("titre"));
+				 o.setNote((rs.getInt("note")));
+				 o.setOrigine(rs.getString("origine"));
+				 result.add(o);
 			}
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
