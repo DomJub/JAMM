@@ -1,5 +1,8 @@
 language: java
 jdk:
   - oraclejdk8
-before_script: sh copyDBConfig.sh
+before_script: echo "begin copyDBConfig.sh script"
+before_script: cp DBConfig.java /home/travis/build/abou-imran/GED/intellij-workspace/src/main/java/app/repository/DBConfig.java -v
+before_script: ls /home/travis/build/abou-imran/GED/intellij-workspace/src/main/java/app/repository/
+before_script: echo "End copyDBConfig.sh script"
 before_script: cd intellij-workspace/
