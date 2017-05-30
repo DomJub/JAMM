@@ -44,7 +44,7 @@ public class MainViewController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		ObservableList<Oeuvre> items = FXCollections.observableArrayList();
+		ObservableList<Oeuvre> items;
 		titre.setCellValueFactory(new PropertyValueFactory<>("titre"));
 		note.setCellValueFactory(new PropertyValueFactory<>("note"));
 		origine.setCellValueFactory(new PropertyValueFactory<>("origine"));

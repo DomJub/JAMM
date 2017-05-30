@@ -11,9 +11,9 @@ public class DBConfig {
     private final String bdname;
 
     public DBConfig() {
-        this.user = "root";
-        this.psswd = "root";
-        this.host = "127.0.0.1";
+        this.user = "dbuser";
+        this.psswd = "dbuser";
+        this.host = "10.1.2.157";
         this.bdname = "jamm";
     }
 
