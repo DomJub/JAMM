@@ -21,6 +21,11 @@ public abstract class AbstractConnect {
     //	private static String dbname = "jamm";
     //	private static String host = "127.0.0.1";
 
+    //	private final static String user = "root";
+    //	private final static String psswd = "";
+    //	private static String dbname = "jamm";
+    //	private static String host = "127.0.0.1:3306";
+
     public AbstractConnect() throws ClassNotFoundException, SQLException {
         try {
             Class.forName(COM_MYSQL_JDBC_DRIVER);
