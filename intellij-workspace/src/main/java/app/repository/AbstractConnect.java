@@ -9,22 +9,15 @@ import java.text.SimpleDateFormat;
  */
 public abstract class AbstractConnect {
 
+    private final static DBConfig conf = new DBConfig();
+
     public static final String COM_MYSQL_JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    private final static String user = "dbuser";
-    private final static String psswd = "dbuser";
+    private final static String user = conf.getUser();
+    private final static String psswd = conf.getPsswd();
+    private static String dbname = conf.getBdname();
+	private static String host = conf.getHost();
+
     static Connection conn;
-    private static String dbname = "jamm";
-	private static String host = "10.1.2.157:3306";
-
-	//	private final static String user = "root";
-    //	private final static String psswd = "root";
-    //	private static String dbname = "jamm";
-    //	private static String host = "127.0.0.1";
-
-    //	private final static String user = "root";
-    //	private final static String psswd = "";
-    //	private static String dbname = "jamm";
-    //	private static String host = "127.0.0.1:3306";
 
     public AbstractConnect() throws ClassNotFoundException, SQLException {
         try {
