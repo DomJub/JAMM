@@ -13,7 +13,7 @@ public abstract class AbstractConnect {
 	private final static String user = "dbuser";
 	private final static String psswd = "dbuser";
 	private static String dbname = "jamm";
-	private static String host = "192.168.1.19:3306";
+	private static String host = "10.1.2.157:3306";
 	static Connection conn;
 
 	public AbstractConnect() throws ClassNotFoundException, SQLException {
