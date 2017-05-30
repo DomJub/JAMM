@@ -2,4 +2,4 @@ language: java
 jdk:
   - oraclejdk8
 before_script: cd intellij-workspace/
-script: copyDBConfig.sh
+script: sh copyDBConfig.sh
