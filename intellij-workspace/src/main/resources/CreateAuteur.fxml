@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="215.0" prefWidth="232.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
-      <TextField fx:id="saisieAuteur" layoutX="28.0" layoutY="34.0" prefHeight="25.0" prefWidth="181.0" />
-      <Button fx:id="valideBt" layoutX="79.0" layoutY="108.0" mnemonicParsing="false" text="Enregistrer" />
+      <TextField fx:id="createTf" layoutX="28.0" layoutY="34.0" prefHeight="25.0" prefWidth="181.0" />
+      <Button fx:id="saveAuthorBtn" layoutX="79.0" layoutY="108.0" mnemonicParsing="false" text="Enregistrer" />
    </children>
 </AnchorPane>

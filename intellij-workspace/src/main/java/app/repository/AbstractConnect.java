@@ -10,14 +10,19 @@ import java.text.SimpleDateFormat;
 public abstract class AbstractConnect {
 
 	public static final String COM_MYSQL_JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	private final static String user = "dbuser";
-	private final static String psswd = "dbuser";
+	private final static String user = "root";
+	private final static String psswd = "";
 	private static String dbname = "jamm";
+<<<<<<< Updated upstream
 	private static String host = "10.1.2.157:3306";
 //	private final static String user = "root";
 //	private final static String psswd = "root";
 //	private static String dbname = "jamm";
 //	private static String host = "127.0.0.1";
+=======
+
+	private static String host = "127.0.0.1:3306";
+>>>>>>> Stashed changes
 
 	static Connection conn;
 
