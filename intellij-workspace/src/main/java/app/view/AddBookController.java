@@ -1,5 +1,6 @@
 package app.view;
 
+import app.model.Auteur;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -45,7 +46,7 @@ public class AddBookController extends PopupAddAuteur implements Initializable{
     private Button addAuthorBtn;
 
     @FXML
-    private ChoiceBox<?> auteurCb;
+    private ChoiceBox<Auteur> auteurCb;
 
     @FXML
     private ChoiceBox<?> langueCb;
@@ -56,6 +57,7 @@ public class AddBookController extends PopupAddAuteur implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        
         addAuthorBtn.setOnMouseClicked(event -> createView("/CreateAuteur.fxml"));
         addGenreBtn.setOnMouseClicked(event -> createView("/CreateGenre.fxml"));
         addSupportBtn.setOnMouseClicked(event -> createView("/CreateSupport.fxml"));
