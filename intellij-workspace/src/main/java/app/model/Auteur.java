@@ -3,7 +3,7 @@ package app.model;
 /**
  * Created by Jub on 31/05/2017.
  */
-public class Auteur {
+public class Auteur implements DataOeuvre{
 
     protected String nomAuteur;
 
@@ -13,11 +13,13 @@ public class Auteur {
         this.nomAuteur = nomAuteur;
     }
 
-    public String getNomAuteur() {
+    @Override
+    public String getName() {
         return this.nomAuteur;
     }
 
-    public void setNomAuteur(String nomAuteur) {
-        this.nomAuteur = nomAuteur;
+    @Override
+    public void setName(String name) {
+        this.nomAuteur = name;
     }
 }

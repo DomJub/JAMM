@@ -23,13 +23,13 @@ public class OeuvreRepositoyImpl implements OeuvreRepository {
 	}
 
 	@Override
-	public ObservableList<Oeuvre> getAll() {
+	public ObservableList<Oeuvre> getAll(String tableName, String columnName) {
 		ObservableList<Oeuvre> result = FXCollections.observableArrayList();
 		try {
 			//AbstractConnect.getConnection();
 
 			ResultSet rs = conn
-					.prepareStatement("SELECT * FROM oeuvre ORDER BY id_oeuvre DESC LIMIT 10")
+					.prepareStatement("SELECT * FROM " + tableName + " ORDER BY " + columnName + " DESC LIMIT 10")
 					.executeQuery();
 
 			while (rs.next()) {
@@ -59,6 +59,11 @@ public class OeuvreRepositoyImpl implements OeuvreRepository {
 
 	@Override
 	public Oeuvre update(Oeuvre object) {
+		return null;
+	}
+
+	@Override
+	public ObservableList<Oeuvre> getAll() {
 		return null;
 	}
 

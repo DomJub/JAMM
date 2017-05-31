@@ -1,7 +1,10 @@
 package app.view;
 
 import app.model.Auteur;
+import app.model.DataOeuvre;
+import app.model.Support;
 import app.repository.impl.AuteurRepositoryImpl;
+import app.repository.impl.SupportRepositoryImpl;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -36,10 +39,10 @@ public class AddBookController extends CreateView implements Initializable{
     private Slider noteSl;
 
     @FXML
-    private ChoiceBox<?> genreCb;
+    private ComboBox<?> genreCob;
 
     @FXML
-    private ChoiceBox<?> supportCb;
+    private ComboBox<Support> supportCob;
 
     @FXML
     private Button addGenreBtn;
@@ -59,6 +62,7 @@ public class AddBookController extends CreateView implements Initializable{
     @FXML
     private Slider achevementSl;
 
+
     @FXML
     public void displayAuthor(){
         ObservableList<Auteur> auteurs;
@@ -68,19 +72,19 @@ public class AddBookController extends CreateView implements Initializable{
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        auteurs = auteurRepo.getAll();
+        auteurs = auteurRepo.getAll("auteur", "nom_auteur");
         auteurCob.setItems(auteurs);
 
         auteurCob.setConverter(new StringConverter<Auteur>() {
             @Override
             public String toString(Auteur object) {
-                return object.getNomAuteur();
+                return object.getName();
             }
             @Override
             public Auteur fromString(String nomAuteur) {
                 if (auteurCob.getValue() != null)
                 {
-                    ((Auteur)auteurCob.getValue()).setNomAuteur(nomAuteur);
+                    ((Auteur)auteurCob.getValue()).setName(nomAuteur);
                     auteurCob.show();
                     return (Auteur)auteurCob.getValue();
                 }
@@ -90,10 +94,43 @@ public class AddBookController extends CreateView implements Initializable{
 
     }
 
+    @FXML
+    public void displaySupport(){
+        ObservableList<Support> supports;
+        SupportRepositoryImpl supportRepo = null;
+        try {
+            supportRepo = new SupportRepositoryImpl();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        supports = supportRepo.getAll("auteur", "nom_auteur");
+        supportCob.setItems(supports);
+
+        supportCob.setConverter(new StringConverter<Support>() {
+            @Override
+            public String toString(Support object) {
+                return object.getName();
+            }
+            @Override
+            public Support fromString(String nomSupport) {
+                if (supportCob.getValue() != null)
+                {
+                    ((Support)supportCob.getValue()).setName(nomSupport);
+                    supportCob.show();
+                    return (Support)supportCob.getValue();
+                }
+                return null;
+            }
+        });
+
+    }
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        auteurCob.setOnMouseClicked(event -> displayAuthor());
+        //auteurCob.setOnMouseClicked(event -> displayAuthor());
+        auteurCob.setOnShown(event -> displayAuthor());
         addAuthorBtn.setOnMouseClicked(event -> createView("/CreateAuteur.fxml"));
         addGenreBtn.setOnMouseClicked(event -> createView("/CreateGenre.fxml"));
         addSupportBtn.setOnMouseClicked(event -> createView("/CreateSupport.fxml"));

@@ -1,32 +1,29 @@
 package app.repository.impl;
 
 import app.model.Auteur;
-import app.model.DataOeuvre;
+import app.model.Support;
 import app.repository.AbstractConnect;
-import app.repository.AuteurRepository;
-import app.repository.Repository;
+import app.repository.SupportRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
  * Created by Jub on 31/05/2017.
  */
-public class AuteurRepositoryImpl implements Repository<Auteur> {
+public class SupportRepositoryImpl extends AbstractConnect implements SupportRepository  {
 
-    Connection conn = AbstractConnect.getConnection();
 
-    public AuteurRepositoryImpl() throws SQLException {
+    public SupportRepositoryImpl() throws ClassNotFoundException, SQLException {
     }
 
     @Override
-    public ObservableList<Auteur> getAll(String tableName, String columnName) {
-        ObservableList<Auteur> result = FXCollections.observableArrayList();
+    public ObservableList<Support> getAll(String tableName, String columnName) {
+        ObservableList<Support> result = FXCollections.observableArrayList();
         try {
-            //AbstractConnect.getConnection();
+            AbstractConnect.getConnection();
 
             ResultSet rs = conn
                     .prepareStatement("SELECT * FROM " + tableName + " ORDER BY " + columnName + " ASC")
@@ -34,9 +31,9 @@ public class AuteurRepositoryImpl implements Repository<Auteur> {
 
             while (rs.next()) {
 
-                Auteur a = new Auteur();
-                a.setName(rs.getString(columnName));
-                result.add(a);
+                Support s = new Support();
+                s.setName(rs.getString(columnName));
+                result.add(s);
             }
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -46,23 +43,22 @@ public class AuteurRepositoryImpl implements Repository<Auteur> {
     }
 
     @Override
-    public Auteur insert(Auteur object) {
+    public Support insert(Support object) {
         return null;
     }
 
     @Override
-    public boolean delete(Auteur object) {
+    public boolean delete(Support object) {
         return false;
     }
 
     @Override
-    public Auteur update(Auteur object) {
+    public Support update(Support object) {
         return null;
     }
 
     @Override
-    public ObservableList<Auteur> getAll() {
+    public ObservableList<Support> getAll() {
         return null;
     }
-
 }

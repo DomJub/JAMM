@@ -17,7 +17,7 @@ public abstract class AbstractConnect {
     private static String dbname = conf.getBdname();
 	private static String host = conf.getHost();
 
-    static Connection conn;
+    protected static Connection conn;
 
     public AbstractConnect() throws ClassNotFoundException, SQLException {
         try {
