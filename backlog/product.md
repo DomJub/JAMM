@@ -203,6 +203,20 @@ d) langue
 ----------
 
 
+| ID         | 5                                     |
+|------------|---------------------------------------|
+| Title      | Enregistrer une oeuvre dans la base de donnees de l'appli |
+| Priority   | 98                                    |
+| Estimation | 40                                    |
+| As a       | un user                               |
+| I want     | appuyer sur un bouton de submit  |
+| So that    | que les donnes de l'appli soient enregistrees |
+
+### DoD
+
+Pour chacune des 4 fenetres de creation d'oeuvres, lorsque l'on appuie sur un bouton dedie, les donnees saisies soient enregistrees.
+
+----------
 | ID           | 15                                       |
 | ------------ | ---------------------------------------- |
 | Title        | Afficher les oeuvres dans un tableau     |
