@@ -1,11 +1,8 @@
 package app.repository.impl;
 
 import app.model.Auteur;
-import app.model.Oeuvre;
-import app.model.OeuvreLite;
 import app.repository.AbstractConnect;
 import app.repository.AuteurRepository;
-import app.repository.OeuvreRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -36,7 +33,7 @@ public class AuteurRepositoryImpl implements AuteurRepository{
             while (rs.next()) {
 
                 Auteur a = new Auteur();
-                a.setAuteur(rs.getString("nom_auteur"));
+                a.setNomAuteur(rs.getString("nom_auteur"));
                 result.add(a);
             }
         } catch (SQLException e) {
@@ -45,6 +42,11 @@ public class AuteurRepositoryImpl implements AuteurRepository{
 
         return result;
     }
+
+    public String toString(Auteur auteur){
+        return auteur.toString();
+    }
+
 
 
     @Override

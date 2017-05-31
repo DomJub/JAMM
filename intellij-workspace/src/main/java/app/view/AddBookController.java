@@ -1,11 +1,15 @@
 package app.view;
 
 import app.model.Auteur;
+import app.repository.impl.AuteurRepositoryImpl;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.util.StringConverter;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 /**
@@ -46,7 +50,7 @@ public class AddBookController extends PopupAddAuteur implements Initializable{
     private Button addAuthorBtn;
 
     @FXML
-    private ChoiceBox<Auteur> auteurCb;
+    private ComboBox<Auteur> auteurCob;
 
     @FXML
     private ChoiceBox<?> langueCb;
@@ -57,7 +61,27 @@ public class AddBookController extends PopupAddAuteur implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
+        ObservableList<Auteur> items;
+        AuteurRepositoryImpl auteurRepo = null;
+        try {
+            auteurRepo = new AuteurRepositoryImpl();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        items = auteurRepo.getAll();
+        auteurCob.setItems(items);
+        auteurCob.setConverter(new StringConverter<Auteur>() {
+            @Override
+            public String toString(Auteur object) {
+                return object.getNomAuteur();
+            }
+
+            @Override
+            public Auteur fromString(String string) {
+                return null;
+            }
+        });
+
         addAuthorBtn.setOnMouseClicked(event -> createView("/CreateAuteur.fxml"));
         addGenreBtn.setOnMouseClicked(event -> createView("/CreateGenre.fxml"));
         addSupportBtn.setOnMouseClicked(event -> createView("/CreateSupport.fxml"));

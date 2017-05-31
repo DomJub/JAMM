@@ -5,7 +5,7 @@ package app.model;
  */
 public abstract class Oeuvre {
     protected String titre;
-    protected String auteur;
+    protected Auteur auteur;
     protected String libelle_auteur;
     protected String origine;
     protected String support;
@@ -14,7 +14,7 @@ public abstract class Oeuvre {
 
     public Oeuvre() {
         this.titre = "";
-        this.auteur = "";
+        this.auteur = new Auteur();
         this.libelle_auteur = "";
         this.origine = "";
         this.support = "";
@@ -24,7 +24,7 @@ public abstract class Oeuvre {
 
     public Oeuvre(String titre, String auteur, String libelle_auteur, String origine, String support, int note, String commentaire) {
         this.titre = titre;
-        this.auteur = auteur;
+        this.auteur = new Auteur();
         this.libelle_auteur = libelle_auteur;
         this.origine = origine;
         this.support = support;
@@ -41,12 +41,12 @@ public abstract class Oeuvre {
         return this;
     }
 
-    public String getAuteur() {
-        return auteur;
+    public Auteur getAuteur() {
+        return this.auteur;
     }
 
-    public void setAuteur(String auteur) {
-        this.auteur = auteur;
+    public void setAuteur(Auteur auteur) {
+        this.auteur = new Auteur();
     }
 
     public String getLibelle_auteur() {
