@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 /**
  * Created by Philippe on 30/05/2017.
  */
-public class PopupAdd implements app.repository.PopupAdd, Initializable {
+public class PopupAddAuteur implements app.repository.PopupAdd, Initializable {
 
 
     @FXML
@@ -30,6 +30,36 @@ public class PopupAdd implements app.repository.PopupAdd, Initializable {
 
     @FXML
     private Button saveAuthorBtn;
+
+    @FXML
+    public void AddNewAuthor(){
+        String auteur = createTf.getText();
+
+        try {
+            Connection conn = AbstractConnect.getConnection();
+            String query = "INSERT INTO auteur (nom_auteur) VALUES (?)";
+
+            PreparedStatement p = conn.prepareStatement(query);
+            p.setString(1, auteur);
+            p.execute();
+            p.close();
+            sceneClose();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void sceneClose(){
+        Stage stage = (Stage) saveAuthorBtn.getScene().getWindow();
+        stage.close();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        saveAuthorBtn.setOnAction(event -> AddNewAuthor());
+    }
 
     protected void createView(String name) {
         try {
@@ -44,29 +74,4 @@ public class PopupAdd implements app.repository.PopupAdd, Initializable {
         }
     }
 
-    @FXML
-    public void AddNewAuthor(){
-        String auteur = createTf.getText();
-
-        try {
-            Connection conn = AbstractConnect.getConnection();
-            //String auteur = createTf.getText();
-            String query = "INSERT INTO auteur (nom_auteur) VALUES (?)";
-
-            PreparedStatement p = conn.prepareStatement(query);
-            p.setString(1, auteur);
-            p.execute();
-            p.close();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        saveAuthorBtn.setOnAction(event -> AddNewAuthor());
-    }
 }

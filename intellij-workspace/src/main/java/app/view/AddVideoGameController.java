@@ -10,7 +10,7 @@ import java.util.ResourceBundle;
 /**
  * Created by Jub on 24/05/2017.
  */
-public class AddVideoGameController extends PopupAdd implements Initializable{
+public class AddVideoGameController extends PopupAddAuteur implements Initializable{
     @FXML
     private TextField titreTf;
 

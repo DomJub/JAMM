@@ -10,7 +10,7 @@ import java.util.ResourceBundle;
 /**
  * Created by Jub on 24/05/2017.
  */
-public class AddBookController extends PopupAdd implements Initializable{
+public class AddBookController extends PopupAddAuteur implements Initializable{
     @FXML
     private TextField titreTf;
 
