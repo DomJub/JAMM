@@ -15,7 +15,8 @@ import java.util.ResourceBundle;
 /**
  * Created by Jub on 24/05/2017.
  */
-public class AddBookController extends PopupAddAuteur implements Initializable{
+public class AddBookController extends CreateView implements Initializable{
+
     @FXML
     private TextField titreTf;
 
@@ -58,32 +59,63 @@ public class AddBookController extends PopupAddAuteur implements Initializable{
     @FXML
     private Slider achevementSl;
 
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<Auteur> items;
+    @FXML
+    public void displayAuthor(){
+        ObservableList<Auteur> auteurs;
         AuteurRepositoryImpl auteurRepo = null;
         try {
             auteurRepo = new AuteurRepositoryImpl();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        items = auteurRepo.getAll();
-        auteurCob.setItems(items);
+        auteurs = auteurRepo.getAll();
+        auteurCob.setItems(auteurs);
+
         auteurCob.setConverter(new StringConverter<Auteur>() {
             @Override
             public String toString(Auteur object) {
                 return object.getNomAuteur();
             }
-
             @Override
-            public Auteur fromString(String string) {
+            public Auteur fromString(String nomAuteur) {
+                if (auteurCob.getValue() != null)
+                {
+                    ((Auteur)auteurCob.getValue()).setNomAuteur(nomAuteur);
+                    auteurCob.show();
+                    return (Auteur)auteurCob.getValue();
+                }
                 return null;
             }
         });
 
+    }
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        auteurCob.setOnMouseClicked(event -> displayAuthor());
         addAuthorBtn.setOnMouseClicked(event -> createView("/CreateAuteur.fxml"));
         addGenreBtn.setOnMouseClicked(event -> createView("/CreateGenre.fxml"));
         addSupportBtn.setOnMouseClicked(event -> createView("/CreateSupport.fxml"));
+
+
+
+
+
+        /*auteurCob.setEditable(true);
+        auteurCob.getEditor().setOnAction(new EventHandler<ActionEvent>() {
+              @Override
+              public void handle(ActionEvent event) {
+                  Auteur auteur = auteurCob.getValue();
+                  if(null != auteur){
+                      int index = auteurs.indexOf(auteur);
+                      auteur.setNomAuteur(auteurCob.getEditor().getText());
+                      auteurs.set(index, auteur);
+                      auteurCob.setValue(auteur);
+                  }
+
+              }
+        });*/
+
     }
 }

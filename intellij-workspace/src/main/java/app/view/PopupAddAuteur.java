@@ -22,8 +22,16 @@ import java.util.logging.Logger;
 /**
  * Created by Philippe on 30/05/2017.
  */
-public class PopupAddAuteur implements app.repository.PopupAdd, Initializable {
+public class PopupAddAuteur extends CreateView implements app.repository.PopupAdd, Initializable {
 
+    protected AddBookController addBookController;
+
+    public PopupAddAuteur() {
+    }
+
+    public PopupAddAuteur(AddBookController addBookController) {
+        this.addBookController = addBookController;
+    }
 
     @FXML
     private TextField createTf;
@@ -44,6 +52,7 @@ public class PopupAddAuteur implements app.repository.PopupAdd, Initializable {
             p.execute();
             p.close();
             sceneClose();
+            //this.addBookController.displayAuthor();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -59,19 +68,6 @@ public class PopupAddAuteur implements app.repository.PopupAdd, Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         saveAuthorBtn.setOnAction(event -> AddNewAuthor());
-    }
-
-    protected void createView(String name) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(name));
-            Parent root2 = fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root2));
-            stage.show();
-        } catch (IOException e) {
-            Logger logger = Logger.getLogger(getClass().getName());
-            logger.log(Level.SEVERE, "Failed to create new Window.", e);
-        }
     }
 
 }
