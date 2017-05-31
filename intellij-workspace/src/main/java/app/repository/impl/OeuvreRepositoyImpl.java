@@ -33,11 +33,11 @@ public class OeuvreRepositoyImpl implements OeuvreRepository {
 
 			while (rs.next()) {
 
-				 OeuvreLite o = new OeuvreLite();
-				 o.setTitre(rs.getString("titre"));
-				 o.setNote((rs.getInt("note")));
-				 o.setOrigine(rs.getString("origine"));
-				 result.add(o);
+				OeuvreLite o = new OeuvreLite();
+				o.setTitre(rs.getString("titre"));
+				o.setNote((rs.getInt("note")));
+				o.setOrigine(rs.getString("origine"));
+				result.add(o);
 			}
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
@@ -63,7 +63,28 @@ public class OeuvreRepositoyImpl implements OeuvreRepository {
 
 	@Override
 	public ObservableList<Oeuvre> getAll() {
-		return null;
+		ObservableList<Oeuvre> result = FXCollections.observableArrayList();
+		try {
+			//AbstractConnect.getConnection();
+
+			ResultSet rs = conn
+					.prepareStatement("SELECT * FROM oeuvre ORDER BY id_oeuvre DESC LIMIT 10")
+					.executeQuery();
+
+			while (rs.next()) {
+
+				OeuvreLite o = new OeuvreLite();
+				o.setTitre(rs.getString("titre"));
+				o.setNote((rs.getInt("note")));
+				o.setOrigine(rs.getString("origine"));
+				result.add(o);
+			}
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+		}
+
+		return result;
 	}
+
 
 }

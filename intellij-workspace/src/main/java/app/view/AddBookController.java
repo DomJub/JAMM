@@ -124,7 +124,7 @@ public class AddBookController extends CreateView implements Initializable {
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        supports = supportRepo.getAll("auteur", "nom_auteur");
+        supports = supportRepo.getAll("support", "nom_support");
         supportCob.setItems(supports);
 
         supportCob.setConverter(new StringConverter<Support>() {
@@ -152,6 +152,7 @@ public class AddBookController extends CreateView implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         //auteurCob.setOnMouseClicked(event -> displayAuthor());
         auteurCob.setOnShown(event -> displayAuthor());
+        supportCob.setOnShown(event -> displaySupport());
         addAuthorBtn.setOnMouseClicked(event -> createView("/CreateAuteur.fxml"));
         addGenreBtn.setOnMouseClicked(event -> createView("/CreateGenre.fxml"));
         addSupportBtn.setOnMouseClicked(event -> createView("/CreateSupport.fxml"));
