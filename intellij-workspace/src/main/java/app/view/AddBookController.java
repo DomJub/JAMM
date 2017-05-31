@@ -1,5 +1,6 @@
 package app.view;
 
+
 import app.repository.AbstractConnect;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -9,6 +10,14 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+
+import app.model.Auteur;
+import app.repository.impl.AuteurRepositoryImpl;
+import javafx.collections.ObservableList;
+
+import javafx.util.StringConverter;
+
+
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
@@ -50,7 +59,7 @@ public class AddBookController extends PopupAddAuteur implements Initializable {
     private Button addAuthorBtn;
 
     @FXML
-    private ChoiceBox<?> auteurCb;
+    private ComboBox<Auteur> auteurCob;
 
     @FXML
     private ChoiceBox<?> langueCb;
@@ -66,6 +75,27 @@ public class AddBookController extends PopupAddAuteur implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        ObservableList<Auteur> items;
+        AuteurRepositoryImpl auteurRepo = null;
+        try {
+            auteurRepo = new AuteurRepositoryImpl();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        items = auteurRepo.getAll();
+        auteurCob.setItems(items);
+        auteurCob.setConverter(new StringConverter<Auteur>() {
+            @Override
+            public String toString(Auteur object) {
+                return object.getNomAuteur();
+            }
+
+            @Override
+            public Auteur fromString(String string) {
+                return null;
+            }
+        });
+
         addAuthorBtn.setOnMouseClicked(event -> createView("/CreateAuteur.fxml"));
         addGenreBtn.setOnMouseClicked(event -> createView("/CreateGenre.fxml"));
         addSupportBtn.setOnMouseClicked(event -> createView("/CreateSupport.fxml"));
@@ -83,7 +113,7 @@ public class AddBookController extends PopupAddAuteur implements Initializable {
         double achevement = achevementSl.getValue();
         String genre = genreCb.getSelectionModel().getSelectedItem().toString();
         String support = supportCb.getSelectionModel().getSelectedItem().toString();
-        String auteur = auteurCb.getSelectionModel().getSelectedItem().toString();
+        String auteur = auteurCob.getSelectionModel().getSelectedItem().toString();
         String langue = langueCb.getSelectionModel().getSelectedItem().toString();
 
 
