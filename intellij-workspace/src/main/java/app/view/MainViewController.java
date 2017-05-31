@@ -10,7 +10,6 @@ import java.util.logging.Logger;
 import app.model.Oeuvre;
 import app.repository.OeuvreRepository;
 import app.repository.impl.OeuvreRepositoyImpl;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
