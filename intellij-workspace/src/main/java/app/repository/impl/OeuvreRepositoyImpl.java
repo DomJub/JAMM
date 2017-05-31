@@ -1,16 +1,15 @@
 package app.repository.impl;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 import app.model.Oeuvre;
 import app.model.OeuvreLite;
 import app.repository.AbstractConnect;
 import app.repository.OeuvreRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  * Created by Philippe on 22/05/2017.
