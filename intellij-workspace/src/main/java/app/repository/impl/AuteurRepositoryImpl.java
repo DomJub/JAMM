@@ -4,6 +4,8 @@ import app.model.Auteur;
 import app.model.Oeuvre;
 import app.model.OeuvreLite;
 import app.repository.AbstractConnect;
+import app.repository.AuteurRepository;
+import app.repository.OeuvreRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -14,7 +16,7 @@ import java.sql.SQLException;
 /**
  * Created by Jub on 31/05/2017.
  */
-public class AuteurRepositoryImpl {
+public class AuteurRepositoryImpl implements AuteurRepository{
 
     Connection conn = AbstractConnect.getConnection();
 
@@ -43,6 +45,7 @@ public class AuteurRepositoryImpl {
 
         return result;
     }
+
 
     @Override
     public Auteur insert(Auteur object) {
