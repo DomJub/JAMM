@@ -9,19 +9,19 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    public static Stage stage;
+	public static Stage stage;
 
 	@Override
 	public void start(Stage primaryStage) {
-	    Main.stage = primaryStage;
-	    Main.stage.setTitle("JAMM - Gestion Mediathèque");
+		Main.stage = primaryStage;
+		Main.stage.setTitle("JAMM - Gestion Mediathèque");
 		Parent root;
 		try {
 			root = FXMLLoader.load(getClass().getResource("/MainView.fxml"));
-            stage.setScene(new Scene(root));
+			stage.setScene(new Scene(root));
 			stage.show();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 	}
