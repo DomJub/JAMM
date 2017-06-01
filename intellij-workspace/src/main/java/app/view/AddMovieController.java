@@ -2,10 +2,12 @@ package app.view;
 
 import app.model.Auteur;
 import app.model.Genre;
+import app.model.Langue;
 import app.model.Support;
 import app.repository.AbstractConnect;
 import app.repository.impl.AuteurRepositoryImpl;
 import app.repository.impl.GenreRepositoryImpl;
+import app.repository.impl.LangueRepositoryImpl;
 import app.repository.impl.SupportRepositoryImpl;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -44,16 +46,16 @@ public class AddMovieController extends CreateView implements Initializable{
     private Slider noteSl;
 
     @FXML
-    private ChoiceBox<Genre> genreCb;
+    private ComboBox<Genre> genreCb;
 
     @FXML
-    private ChoiceBox<Support> supportCb;
+    private ComboBox<Support> supportCb;
 
     @FXML
-    private ChoiceBox<Auteur> auteurCb;
+    private ComboBox<Auteur> auteurCb;
 
     @FXML
-    private ChoiceBox<?> langueCb;
+    private ComboBox<Langue> langueCob;
 
     @FXML
     private Slider achevementSl;
@@ -74,10 +76,16 @@ public class AddMovieController extends CreateView implements Initializable{
         auteurCb.setOnShown(event -> displayAuthor());
         supportCb.setOnShown(event -> displaySupport());
         genreCb.setOnShown(event -> displayGenre());
+        langueCob.setOnShown(event -> displayLangue());
         addAuteurBt.setOnMouseClicked(event -> createView("/CreateAuteur.fxml"));
         addGenreBt.setOnMouseClicked(event -> createView("/CreateGenre.fxml"));
         ajoutSupportBt.setOnMouseClicked(event -> createView("/CreateSupport.fxml"));
         addLangueBtn.setOnMouseClicked(event -> createView("/CreateLangue.fxml"));
+        saveBtn.setOnMouseClicked(event -> saveVideo());
+        saveNCloseBtn.setOnMouseClicked(event -> {
+            saveVideo();
+            sceneClose();
+        });
 
     }
 
@@ -179,16 +187,46 @@ public class AddMovieController extends CreateView implements Initializable{
 
     }
 
-    public void saveBook() {
+    public void displayLangue(){
+        ObservableList<Langue> langues;
+        LangueRepositoryImpl langueRepo = null;
+        try {
+            langueRepo = new LangueRepositoryImpl();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        langues = langueRepo.getAll("langue", "nom_langue");
+        langueCob.setItems(langues);
+
+        langueCob.setConverter(new StringConverter<Langue>() {
+            @Override
+            public String toString(Langue object) {
+                return object.getName();
+            }
+            @Override
+            public Langue fromString(String nomLangue) {
+                if (langueCob.getValue() != null)
+                {
+                    ((Langue)langueCob.getValue()).setName(nomLangue);
+                    langueCob.show();
+                    return (Langue) langueCob.getValue();
+                }
+                return null;
+            }
+        });
+
+    }
+
+    public void saveVideo() {
         String titre = titreTf.getText();
         String commentaire = commentaireAr.getText();
         String origine = origineTf.getText();
         double note = noteSl.getValue();
         double achevement = achevementSl.getValue();
-        String genre = genreCb.getSelectionModel().getSelectedItem().toString();
-        String support = supportCb.getSelectionModel().getSelectedItem().toString();
-        String auteur = auteurCb.getSelectionModel().getSelectedItem().toString();
-        String langue = langueCb.getSelectionModel().getSelectedItem().toString();
+        String genre = genreCb.getSelectionModel().getSelectedItem().getName();
+        String support = supportCb.getSelectionModel().getSelectedItem().getName();
+        String auteur = auteurCb.getSelectionModel().getSelectedItem().getName();
+        String langue = langueCob.getSelectionModel().getSelectedItem().getName();
 
         try {
             Connection conn = AbstractConnect.getConnection();

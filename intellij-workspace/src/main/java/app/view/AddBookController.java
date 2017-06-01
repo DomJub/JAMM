@@ -220,17 +220,17 @@ public class AddBookController extends CreateView implements Initializable {
         addGenreBtn.setOnMouseClicked(event -> createView("/CreateGenre.fxml"));
         addSupportBtn.setOnMouseClicked(event -> createView("/CreateSupport.fxml"));
         addLangueBtn.setOnMouseClicked(event -> createView("/CreateLangue.fxml"));
-        saveBtn.setOnMouseClicked(event -> saveBook1());
+        saveBtn.setOnMouseClicked(event -> saveBook());
         saveNCloseBtn.setOnMouseClicked(event -> {
             saveBook();
             sceneClose();
         });
     }
 
-    private void saveBook1() {
+   /* private void saveBook1() {
         String auteur = auteurCob.getSelectionModel().getSelectedItem().toString();
         System.out.println(auteur);
-    }
+    }*/
 
     public void saveBook() {
         String titre = titreTf.getText();
@@ -238,22 +238,22 @@ public class AddBookController extends CreateView implements Initializable {
         String origine = origineTf.getText();
         double note = noteSl.getValue();
         double achevement = achevementSl.getValue();
-        String genre = genreCob.getSelectionModel().getSelectedItem().toString();
-        String support = supportCob.getSelectionModel().getSelectedItem().toString();
-        String auteur = auteurCob.getSelectionModel().getSelectedItem().toString();
-        String langue = langueCob.getSelectionModel().getSelectedItem().toString();
+        String genre = genreCob.getSelectionModel().getSelectedItem().getName();
+        String support = supportCob.getSelectionModel().getSelectedItem().getName();
+        String auteur = auteurCob.getSelectionModel().getSelectedItem().getName();
+        String langue = langueCob.getSelectionModel().getSelectedItem().getName();
 
         try {
             Connection conn = AbstractConnect.getConnection();
 
-            String query = "INSERT INTO oeuvre (titre, origine, note, commentaire, achevement, statut," +
+            String query = "INSERT INTO oeuvre (titre, origine, note, commentaire, achevement, stats," +
                     " auteur_id_auteur, genre_id_genre, categorie_id_categorie, langue_id_langue," +
-                    "support_id_support, console_id_console)" +
+                    "support_id_support, console_id_console, piste_id_piste)" +
                     " VALUES(?,?,?,?,?,?," +
                     "(select id_auteur from auteur where nom_auteur = ? order by id_auteur limit 1 )," +
                     "(select id_genre from genre where nom_genre = ? order by id_genre limit 1 ),'1'," +
                     "(select id_langue from langue where nom_langue = ? order by id_langue limit 1)," +
-                    "(select id_support from support where nom_support = ? order by id_support limit 1 ),'2')";
+                    "(select id_support from support where nom_support = ? order by id_support limit 1 ),'2', '1')";
 
             PreparedStatement p = conn.prepareStatement(query);
             p.setString(1, titre);

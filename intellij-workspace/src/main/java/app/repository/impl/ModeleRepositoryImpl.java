@@ -1,30 +1,30 @@
 package app.repository.impl;
 
-import app.model.Auteur;
-
+import app.model.Marque;
+import app.model.Modele;
 import app.repository.AbstractConnect;
-import app.repository.Repository;
+import app.repository.MarqueRepository;
+import app.repository.ModeleRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
  * Created by Jub on 31/05/2017.
  */
-public class AuteurRepositoryImpl implements Repository<Auteur> {
+public class ModeleRepositoryImpl extends AbstractConnect implements ModeleRepository {
 
-    Connection conn = AbstractConnect.getConnection();
 
-    public AuteurRepositoryImpl() throws SQLException {
+    public ModeleRepositoryImpl() throws ClassNotFoundException, SQLException {
     }
 
     @Override
-    public ObservableList<Auteur> getAll(String tableName, String columnName) {
-        ObservableList<Auteur> result = FXCollections.observableArrayList();
+    public ObservableList<Modele> getAll(String tableName, String columnName) {
+        ObservableList<Modele> result = FXCollections.observableArrayList();
         try {
+            AbstractConnect.getConnection();
 
             ResultSet rs = conn
                     .prepareStatement("SELECT * FROM " + tableName + " ORDER BY " + columnName + " ASC")
@@ -32,9 +32,9 @@ public class AuteurRepositoryImpl implements Repository<Auteur> {
 
             while (rs.next()) {
 
-                Auteur a = new Auteur();
-                a.setName(rs.getString(columnName));
-                result.add(a);
+                Modele mo = new Modele();
+                mo.setName(rs.getString(columnName));
+                result.add(mo);
             }
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -44,23 +44,26 @@ public class AuteurRepositoryImpl implements Repository<Auteur> {
     }
 
     @Override
-    public Auteur insert(Auteur object) {
+    public Modele insert(Modele object) {
         return null;
     }
 
     @Override
-    public boolean delete(Auteur object) {
+    public boolean delete(Modele object) {
         return false;
     }
 
     @Override
-    public Auteur update(Auteur object) {
+    public Modele update(Modele object) {
         return null;
     }
 
     @Override
-    public ObservableList<Auteur> getAll() {
+    public ObservableList<Modele> getAll() {
         return null;
     }
 
+
 }
+
+

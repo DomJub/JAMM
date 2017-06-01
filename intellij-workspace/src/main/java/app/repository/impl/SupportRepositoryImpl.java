@@ -1,6 +1,6 @@
 package app.repository.impl;
 
-import app.model.Auteur;
+import app.model.Langue;
 import app.model.Support;
 import app.repository.AbstractConnect;
 import app.repository.SupportRepository;
