@@ -5,32 +5,23 @@ package app.model;
  */
 public class OeuvreLite extends Oeuvre {
 
-	/*
-	 * final private SimpleStringProperty titre; final private
-	 * SimpleStringProperty note; final private SimpleStringProperty origine;
-	 */
-	@Override
-	public String getTitre() {
-		return super.getTitre();
-	}
 
-	@Override
-	public String getOrigine() {
-		return super.getOrigine();
-	}
+    @Override
+    public String getTitre() {
+        return super.getTitre();
+    }
 
-	@Override
-	public int getNote() {
-		return super.getNote();
-	}
+    @Override
+    public String getOrigine() {
+        return super.getOrigine();
+    }
 
-	/*
-	 * public OeuvreLite(String titre, Integer note, String origine){
-	 * 
-	 * this.note = new SimpleStringProperty(); this.titre = new
-	 * SimpleStringProperty(); this.origine = new SimpleStringProperty(); }
-	 */
-	public OeuvreLite() {
+    @Override
+    public int getNote() {
+        return super.getNote();
+    }
 
-	}
+    public OeuvreLite() {
+
+    }
 }

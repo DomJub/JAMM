@@ -1,9 +1,7 @@
 package app.repository.impl;
 
 import app.model.Auteur;
-import app.model.DataOeuvre;
 import app.repository.AbstractConnect;
-import app.repository.AuteurRepository;
 import app.repository.Repository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -26,7 +24,6 @@ public class AuteurRepositoryImpl implements Repository<Auteur> {
     public ObservableList<Auteur> getAll(String tableName, String columnName) {
         ObservableList<Auteur> result = FXCollections.observableArrayList();
         try {
-            //AbstractConnect.getConnection();
 
             ResultSet rs = conn
                     .prepareStatement("SELECT * FROM " + tableName + " ORDER BY " + columnName + " ASC")

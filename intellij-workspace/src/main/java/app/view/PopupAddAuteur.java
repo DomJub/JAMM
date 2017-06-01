@@ -2,35 +2,23 @@ package app.view;
 
 import app.repository.AbstractConnect;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Created by Philippe on 30/05/2017.
  */
 public class PopupAddAuteur extends CreateView implements app.repository.PopupAdd, Initializable {
 
-    protected AddBookController addBookController;
-
     public PopupAddAuteur() {
-    }
-
-    public PopupAddAuteur(AddBookController addBookController) {
-        this.addBookController = addBookController;
     }
 
     @FXML
@@ -52,7 +40,7 @@ public class PopupAddAuteur extends CreateView implements app.repository.PopupAd
             p.execute();
             p.close();
             sceneClose();
-            //this.addBookController.displayAuthor();
+
 
         } catch (SQLException e) {
             e.printStackTrace();

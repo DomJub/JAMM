@@ -22,31 +22,6 @@ public class OeuvreRepositoyImpl implements OeuvreRepository {
 	}
 
 	@Override
-	public ObservableList<Oeuvre> getAll(String tableName, String columnName) {
-		ObservableList<Oeuvre> result = FXCollections.observableArrayList();
-		try {
-			//AbstractConnect.getConnection();
-
-			ResultSet rs = conn
-					.prepareStatement("SELECT * FROM " + tableName + " ORDER BY " + columnName + " DESC LIMIT 10")
-					.executeQuery();
-
-			while (rs.next()) {
-
-				OeuvreLite o = new OeuvreLite();
-				o.setTitre(rs.getString("titre"));
-				o.setNote((rs.getInt("note")));
-				o.setOrigine(rs.getString("origine"));
-				result.add(o);
-			}
-		} catch (SQLException e) {
-			System.err.println(e.getMessage());
-		}
-
-		return result;
-	}
-
-	@Override
 	public Oeuvre insert(Oeuvre object) {
 		return null;
 	}
@@ -65,14 +40,11 @@ public class OeuvreRepositoyImpl implements OeuvreRepository {
 	public ObservableList<Oeuvre> getAll() {
 		ObservableList<Oeuvre> result = FXCollections.observableArrayList();
 		try {
-			//AbstractConnect.getConnection();
-
 			ResultSet rs = conn
 					.prepareStatement("SELECT * FROM oeuvre ORDER BY id_oeuvre DESC LIMIT 10")
 					.executeQuery();
 
 			while (rs.next()) {
-
 				OeuvreLite o = new OeuvreLite();
 				o.setTitre(rs.getString("titre"));
 				o.setNote((rs.getInt("note")));
@@ -82,7 +54,27 @@ public class OeuvreRepositoyImpl implements OeuvreRepository {
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
 		}
+		return result;
+	}
 
+	@Override
+	public ObservableList<Oeuvre> getAll(String tableName, String columnName) {
+		ObservableList<Oeuvre> result = FXCollections.observableArrayList();
+		try {
+			ResultSet rs = conn
+					.prepareStatement("SELECT * FROM " + tableName + " ORDER BY " + columnName + " DESC LIMIT 10")
+					.executeQuery();
+
+			while (rs.next()) {
+				OeuvreLite o = new OeuvreLite();
+				o.setTitre(rs.getString("titre"));
+				o.setNote((rs.getInt("note")));
+				o.setOrigine(rs.getString("origine"));
+				result.add(o);
+			}
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+		}
 		return result;
 	}
 

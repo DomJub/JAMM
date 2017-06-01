@@ -31,8 +31,9 @@
       <Button fx:id="addAuthorBtn" layoutX="243.0" layoutY="29.0" mnemonicParsing="false" text="Add" />
       <Label layoutX="25.0" layoutY="354.0" text="Achevement" />
       <Label layoutX="351.0" layoutY="354.0" text="Langue" />
-      <ChoiceBox fx:id="langueCb" layoutX="417.0" layoutY="350.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="langueCb" layoutX="417.0" layoutY="350.0" prefHeight="25.0" prefWidth="117.0" />
       <Slider fx:id="achevementSl" layoutX="116.0" layoutY="356.0" minorTickCount="10" prefHeight="14.0" prefWidth="215.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
       <ComboBox fx:id="auteurCob" layoutX="81.0" layoutY="29.0" prefWidth="150.0" />
+      <Button fx:id="langueBt" layoutX="544.0" layoutY="350.0" mnemonicParsing="false" text="Add" />
    </children>
 </AnchorPane>

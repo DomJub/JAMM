@@ -1,32 +1,20 @@
 package app.view;
 
-import javafx.fxml.Initializable;
 import app.model.Auteur;
-import app.model.DataOeuvre;
 import app.model.Support;
+import app.repository.AbstractConnect;
 import app.repository.impl.AuteurRepositoryImpl;
 import app.repository.impl.SupportRepositoryImpl;
 import javafx.collections.ObservableList;
-
-
-import app.repository.AbstractConnect;
-
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
 
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-
-import app.model.Auteur;
-import app.repository.impl.AuteurRepositoryImpl;
-import javafx.collections.ObservableList;
-
-import javafx.util.StringConverter;
-
-
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
@@ -79,13 +67,16 @@ public class AddBookController extends CreateView implements Initializable {
     private Slider achevementSl;
 
     @FXML
-    public void sceneClose(){
+    private Button langueBt;
+
+    @FXML
+    private void sceneClose(){
         Stage stage = (Stage) saveNCloseBtn.getScene().getWindow();
         stage.close();
     }
 
     @FXML
-    public void displayAuthor(){
+    private void displayAuthor(){
         ObservableList<Auteur> auteurs;
         AuteurRepositoryImpl auteurRepo = null;
         try {
@@ -103,20 +94,19 @@ public class AddBookController extends CreateView implements Initializable {
             }
             @Override
             public Auteur fromString(String nomAuteur) {
-                if (auteurCob.getValue() != null)
+               /* if (auteurCob.getValue() != null)
                 {
-                    ((Auteur)auteurCob.getValue()).setName(nomAuteur);
+                    auteurCob.getValue().setName(nomAuteur);
                     auteurCob.show();
-                    return (Auteur)auteurCob.getValue();
-                }
+                    return auteurCob.getValue();
+                }*/
                 return null;
             }
         });
-
     }
 
     @FXML
-    public void displaySupport(){
+    private void displaySupport(){
         ObservableList<Support> supports;
         SupportRepositoryImpl supportRepo = null;
         try {
@@ -134,12 +124,12 @@ public class AddBookController extends CreateView implements Initializable {
             }
             @Override
             public Support fromString(String nomSupport) {
-                if (supportCob.getValue() != null)
+               /* if (supportCob.getValue() != null)
                 {
-                    ((Support)supportCob.getValue()).setName(nomSupport);
+                    supportCob.getValue().setName(nomSupport);
                     supportCob.show();
-                    return (Support)supportCob.getValue();
-                }
+                    return supportCob.getValue();
+                }*/
                 return null;
             }
         });
@@ -150,7 +140,7 @@ public class AddBookController extends CreateView implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //auteurCob.setOnMouseClicked(event -> displayAuthor());
+
         auteurCob.setOnShown(event -> displayAuthor());
         supportCob.setOnShown(event -> displaySupport());
         addAuthorBtn.setOnMouseClicked(event -> createView("/CreateAuteur.fxml"));
@@ -158,7 +148,8 @@ public class AddBookController extends CreateView implements Initializable {
         addSupportBtn.setOnMouseClicked(event -> createView("/CreateSupport.fxml"));
         saveBtn.setOnMouseClicked(event -> saveBook());
         saveNCloseBtn.setOnMouseClicked(event -> {
-            saveBook(); sceneClose();
+            saveBook();
+            sceneClose();
         });
     }
 
@@ -172,7 +163,6 @@ public class AddBookController extends CreateView implements Initializable {
         String support = supportCob.getSelectionModel().getSelectedItem().toString();
         String auteur = auteurCob.getSelectionModel().getSelectedItem().toString();
         String langue = langueCb.getSelectionModel().getSelectedItem().toString();
-
 
         try {
             Connection conn = AbstractConnect.getConnection();
