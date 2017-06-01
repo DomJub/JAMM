@@ -145,7 +145,6 @@ public class AddBookController extends CreateView implements Initializable {
 
 
     @FXML
-
     public void displayGenre(){
         ObservableList<Genre> genres;
         GenreRepositoryImpl genreRepo = null;
