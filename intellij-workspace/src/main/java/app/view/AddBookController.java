@@ -7,6 +7,7 @@ import app.model.Support;
 import app.repository.AbstractConnect;
 import app.repository.impl.AuteurRepositoryImpl;
 import app.repository.impl.GenreRepositoryImpl;
+import app.repository.impl.LangueRepositoryImpl;
 import app.repository.impl.SupportRepositoryImpl;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -176,6 +177,38 @@ public class AddBookController extends CreateView implements Initializable {
     }
 
 
+    @FXML
+
+    public void displayLangue(){
+        ObservableList<Langue> langues;
+        LangueRepositoryImpl langueRepo = null;
+        try {
+            langueRepo = new LangueRepositoryImpl();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        langues = langueRepo.getAll("langue", "nom_langue");
+        langueCob.setItems(langues);
+
+        langueCob.setConverter(new StringConverter<Langue>() {
+            @Override
+            public String toString(Langue object) {
+                return object.getName();
+            }
+            @Override
+            public Langue fromString(String nomLangue) {
+                if (langueCob.getValue() != null)
+                {
+                    ((Langue)langueCob.getValue()).setName(nomLangue);
+                    langueCob.show();
+                    return (Langue) langueCob.getValue();
+                }
+                return null;
+            }
+        });
+
+    }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -183,15 +216,21 @@ public class AddBookController extends CreateView implements Initializable {
         auteurCob.setOnShown(event -> displayAuthor());
         supportCob.setOnShown(event -> displaySupport());
         genreCob.setOnShown(event -> displayGenre());
+        langueCob.setOnShown(event -> displayLangue());
         addAuthorBtn.setOnMouseClicked(event -> createView("/CreateAuteur.fxml"));
         addGenreBtn.setOnMouseClicked(event -> createView("/CreateGenre.fxml"));
         addSupportBtn.setOnMouseClicked(event -> createView("/CreateSupport.fxml"));
         addLangueBtn.setOnMouseClicked(event -> createView("/CreateLangue.fxml"));
-        saveBtn.setOnMouseClicked(event -> saveBook());
+        saveBtn.setOnMouseClicked(event -> saveBook1());
         saveNCloseBtn.setOnMouseClicked(event -> {
             saveBook();
             sceneClose();
         });
+    }
+
+    private void saveBook1() {
+        String auteur = auteurCob.getSelectionModel().getSelectedItem().toString();
+        System.out.println(auteur);
     }
 
     public void saveBook() {
@@ -208,14 +247,14 @@ public class AddBookController extends CreateView implements Initializable {
         try {
             Connection conn = AbstractConnect.getConnection();
 
-            String query = "INSERT INTO oeuvre (titre, origine, note, commentaire, achevement, stats," +
+            String query = "INSERT INTO oeuvre (titre, origine, note, commentaire, achevement, statut," +
                     " auteur_id_auteur, genre_id_genre, categorie_id_categorie, langue_id_langue," +
-                    "support_id_support, console_id_console, piste_id_piste)" +
+                    "support_id_support, console_id_console)" +
                     " VALUES(?,?,?,?,?,?," +
                     "(select id_auteur from auteur where nom_auteur = ? order by id_auteur limit 1 )," +
                     "(select id_genre from genre where nom_genre = ? order by id_genre limit 1 ),'1'," +
                     "(select id_langue from langue where nom_langue = ? order by id_langue limit 1)," +
-                    "(select id_support from support where nom_support = ? order by id_support limit 1 ),'2','1')";
+                    "(select id_support from support where nom_support = ? order by id_support limit 1 ),'2')";
 
             PreparedStatement p = conn.prepareStatement(query);
             p.setString(1, titre);
