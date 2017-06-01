@@ -1,30 +1,30 @@
 package app.repository.impl;
 
-import app.model.Auteur;
-
+import app.model.Langue;
+import app.model.Marque;
 import app.repository.AbstractConnect;
-import app.repository.Repository;
+import app.repository.MarqueRepository;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
  * Created by Jub on 31/05/2017.
  */
-public class AuteurRepositoryImpl implements Repository<Auteur> {
+public class MarqueRepositoryImpl extends AbstractConnect implements MarqueRepository {
 
-    Connection conn = AbstractConnect.getConnection();
 
-    public AuteurRepositoryImpl() throws SQLException {
+    public MarqueRepositoryImpl() throws ClassNotFoundException, SQLException {
     }
 
     @Override
-    public ObservableList<Auteur> getAll(String tableName, String columnName) {
-        ObservableList<Auteur> result = FXCollections.observableArrayList();
+    public ObservableList<Marque> getAll(String tableName, String columnName) {
+        ObservableList<Marque> result = FXCollections.observableArrayList();
         try {
+            AbstractConnect.getConnection();
 
             ResultSet rs = conn
                     .prepareStatement("SELECT * FROM " + tableName + " ORDER BY " + columnName + " ASC")
@@ -32,9 +32,9 @@ public class AuteurRepositoryImpl implements Repository<Auteur> {
 
             while (rs.next()) {
 
-                Auteur a = new Auteur();
-                a.setName(rs.getString(columnName));
-                result.add(a);
+                Marque m = new Marque();
+                m.setName(rs.getString(columnName));
+                result.add(m);
             }
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -44,23 +44,26 @@ public class AuteurRepositoryImpl implements Repository<Auteur> {
     }
 
     @Override
-    public Auteur insert(Auteur object) {
+    public Marque insert(Marque object) {
         return null;
     }
 
     @Override
-    public boolean delete(Auteur object) {
+    public boolean delete(Marque object) {
         return false;
     }
 
     @Override
-    public Auteur update(Auteur object) {
+    public Marque update(Marque object) {
         return null;
     }
 
     @Override
-    public ObservableList<Auteur> getAll() {
+    public ObservableList<Marque> getAll() {
         return null;
     }
 
+
 }
+
+

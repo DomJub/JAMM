@@ -1,6 +1,6 @@
 package app.repository;
 
-import app.model.Oeuvre;
+import app.model.Langue;
 import javafx.collections.ObservableList;
 
 /**

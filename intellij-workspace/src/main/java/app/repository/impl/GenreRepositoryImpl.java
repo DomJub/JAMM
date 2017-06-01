@@ -1,10 +1,9 @@
 package app.repository.impl;
 
 import app.model.Genre;
-import app.model.Support;
+import app.model.Langue;
 import app.repository.AbstractConnect;
 import app.repository.GenreRepository;
-import app.repository.SupportRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

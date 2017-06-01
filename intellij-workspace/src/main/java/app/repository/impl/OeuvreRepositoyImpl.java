@@ -1,5 +1,6 @@
 package app.repository.impl;
 
+import app.model.Langue;
 import app.model.Oeuvre;
 import app.model.OeuvreLite;
 import app.repository.AbstractConnect;
