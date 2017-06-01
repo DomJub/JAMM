@@ -1,17 +1,19 @@
 package app.view;
 
+
 import app.model.Auteur;
 import app.model.Support;
 import app.repository.AbstractConnect;
+import app.model.*;
+import app.repository.impl.GenreRepositoryImpl;
+import javafx.fxml.Initializable;
 import app.repository.impl.AuteurRepositoryImpl;
 import app.repository.impl.SupportRepositoryImpl;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
-
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -43,7 +45,7 @@ public class AddBookController extends CreateView implements Initializable {
     private Slider noteSl;
 
     @FXML
-    private ComboBox<?> genreCob;
+    private ComboBox<Genre> genreCob;
 
     @FXML
     private ComboBox<Support> supportCob;
@@ -106,7 +108,38 @@ public class AddBookController extends CreateView implements Initializable {
     }
 
     @FXML
-    private void displaySupport(){
+    public void displayGenre(){
+        ObservableList<Genre> genres;
+        GenreRepositoryImpl genreRepo = null;
+        try {
+            genreRepo = new GenreRepositoryImpl();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        genres = genreRepo.getAll("genre", "nom_genre");
+        genreCob.setItems(genres);
+
+        genreCob.setConverter(new StringConverter<Genre>() {
+            @Override
+            public String toString(Genre object) {
+                return object.getName();
+            }
+            @Override
+            public Genre fromString(String nomGenre) {
+                if (genreCob.getValue() != null)
+                {
+                    ((Genre)genreCob.getValue()).setName(nomGenre);
+                    genreCob.show();
+                    return (Genre) genreCob.getValue();
+                }
+                return null;
+            }
+        });
+
+    }
+
+    @FXML
+    public void displaySupport(){
         ObservableList<Support> supports;
         SupportRepositoryImpl supportRepo = null;
         try {
@@ -136,13 +169,12 @@ public class AddBookController extends CreateView implements Initializable {
 
     }
 
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         auteurCob.setOnShown(event -> displayAuthor());
         supportCob.setOnShown(event -> displaySupport());
+        genreCob.setOnShown(event -> displayGenre());
         addAuthorBtn.setOnMouseClicked(event -> createView("/CreateAuteur.fxml"));
         addGenreBtn.setOnMouseClicked(event -> createView("/CreateGenre.fxml"));
         addSupportBtn.setOnMouseClicked(event -> createView("/CreateSupport.fxml"));
