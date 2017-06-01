@@ -2,6 +2,7 @@ package app.view;
 
 import app.model.Auteur;
 import app.model.Genre;
+import app.model.Langue;
 import app.model.Support;
 import app.repository.AbstractConnect;
 import app.repository.impl.AuteurRepositoryImpl;
@@ -65,7 +66,7 @@ public class AddBookController extends CreateView implements Initializable {
 	private ComboBox<Auteur> auteurCob;
 
 	@FXML
-	private ChoiceBox<?> langueCb;
+	private ComboBox<Langue> langueCob;
 
 	@FXML
 	private Slider achevementSl;
@@ -140,7 +141,10 @@ public class AddBookController extends CreateView implements Initializable {
 
 	}
 
-	@FXML
+
+
+    @FXML
+
     public void displayGenre(){
         ObservableList<Genre> genres;
         GenreRepositoryImpl genreRepo = null;
@@ -199,7 +203,7 @@ public class AddBookController extends CreateView implements Initializable {
         String genre = genreCob.getSelectionModel().getSelectedItem().toString();
         String support = supportCob.getSelectionModel().getSelectedItem().toString();
         String auteur = auteurCob.getSelectionModel().getSelectedItem().toString();
-        String langue = langueCb.getSelectionModel().getSelectedItem().toString();
+        String langue = langueCob.getSelectionModel().getSelectedItem().toString();
 
         try {
             Connection conn = AbstractConnect.getConnection();
