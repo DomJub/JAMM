@@ -220,17 +220,17 @@ public class AddBookController extends CreateView implements Initializable {
         addGenreBtn.setOnMouseClicked(event -> createView("/CreateGenre.fxml"));
         addSupportBtn.setOnMouseClicked(event -> createView("/CreateSupport.fxml"));
         addLangueBtn.setOnMouseClicked(event -> createView("/CreateLangue.fxml"));
-        saveBtn.setOnMouseClicked(event -> saveBook1());
+        saveBtn.setOnMouseClicked(event -> saveBook());
         saveNCloseBtn.setOnMouseClicked(event -> {
             saveBook();
             sceneClose();
         });
     }
 
-    private void saveBook1() {
+   /* private void saveBook1() {
         String auteur = auteurCob.getSelectionModel().getSelectedItem().toString();
         System.out.println(auteur);
-    }
+    }*/
 
     public void saveBook() {
         String titre = titreTf.getText();
@@ -238,10 +238,10 @@ public class AddBookController extends CreateView implements Initializable {
         String origine = origineTf.getText();
         double note = noteSl.getValue();
         double achevement = achevementSl.getValue();
-        String genre = genreCob.getSelectionModel().getSelectedItem().toString();
-        String support = supportCob.getSelectionModel().getSelectedItem().toString();
-        String auteur = auteurCob.getSelectionModel().getSelectedItem().toString();
-        String langue = langueCob.getSelectionModel().getSelectedItem().toString();
+        String genre = genreCob.getSelectionModel().getSelectedItem().getName();
+        String support = supportCob.getSelectionModel().getSelectedItem().getName();
+        String auteur = auteurCob.getSelectionModel().getSelectedItem().getName();
+        String langue = langueCob.getSelectionModel().getSelectedItem().getName();
 
         try {
             Connection conn = AbstractConnect.getConnection();
@@ -251,9 +251,9 @@ public class AddBookController extends CreateView implements Initializable {
                     "support_id_support, console_id_console)" +
                     " VALUES(?,?,?,?,?,?," +
                     "(select id_auteur from auteur where nom_auteur = ? order by id_auteur limit 1 )," +
-                    "(select id_genre from genre where nom_genre = ? order by id_genre limit 1 ),'1'," +
+                    "(select id_genre from genre where nom_genre = ? order by id_genre limit 1 ),'2'," +
                     "(select id_langue from langue where nom_langue = ? order by id_langue limit 1)," +
-                    "(select id_support from support where nom_support = ? order by id_support limit 1 ),'2')";
+                    "(select id_support from support where nom_support = ? order by id_support limit 1 ),'1')";
 
             PreparedStatement p = conn.prepareStatement(query);
             p.setString(1, titre);
@@ -261,7 +261,7 @@ public class AddBookController extends CreateView implements Initializable {
             p.setInt(3, (int) note);
             p.setString(4, commentaire);
             p.setInt(5, (int) achevement);
-            p.setInt(6, '1');
+            p.setInt(6, 1);
             p.setString(7, auteur);
             p.setString(8, genre);
             p.setString(9, langue);

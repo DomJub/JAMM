@@ -29,6 +29,7 @@ public class PopupAddAuteur extends CreateView implements app.repository.PopupAd
 
     @FXML
     public void AddNewAuthor(){
+        System.out.println("entrée dans la fonction");
         String auteur = createTf.getText();
 
         try {

@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="215.0" prefWidth="232.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" >
-    <children>
-        <TextField fx:id="createTf" layoutX="28.0" layoutY="34.0" prefHeight="25.0" prefWidth="181.0" />
-        <Button fx:id="saveTrackBtn" layoutX="79.0" layoutY="108.0" mnemonicParsing="false" text="Enregistrer" />
-    </children>
+<AnchorPane prefHeight="338.0" prefWidth="562.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.CreateTrackController">
+   <children>
+      <Label layoutX="26.0" layoutY="64.0" text="N° Piste" />
+      <TextField fx:id="numTrackTf" layoutX="80.0" layoutY="60.0" prefHeight="25.0" prefWidth="38.0" />
+      <Button fx:id="addTrackNbBtn" layoutX="125.0" layoutY="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="Add" />
+      <TableView fx:id="trackListTv" layoutX="26.0" layoutY="100.0" prefHeight="182.0" prefWidth="458.0">
+         <columns>
+            <TableColumn fx:id="numTrackCol" prefWidth="77.0" text="N° piste" />
+            <TableColumn fx:id="nameTrackCol" prefWidth="380.0" text="Nom de la piste" />
+         </columns>
+      </TableView>
+      <Label layoutX="179.0" layoutY="64.0" text="Nom Piste" />
+      <TextField fx:id="nameTrackTf" layoutX="242.0" layoutY="60.0" prefHeight="25.0" prefWidth="194.0" />
+      <Button fx:id="addTrackNameBtn" layoutX="441.0" layoutY="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="Add" />
+      <Button fx:id="addTrackListBtn" layoutX="367.0" layoutY="297.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0" text="Save and Close" />
+      <Label fx:id="cdNamel" layoutX="26.0" layoutY="26.0" text="cdName" underline="true">
+         <font>
+            <Font name="Arial" size="21.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>

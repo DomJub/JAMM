@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 /**
  * Created by Jub on 31/05/2017.
  */
@@ -25,4 +26,6 @@ public abstract class CreateView {
             logger.log(Level.SEVERE, "Failed to create new Window.", e);
         }
     }
+
+
 }
