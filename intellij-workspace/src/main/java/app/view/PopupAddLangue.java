@@ -28,15 +28,15 @@ public class PopupAddLangue extends CreateView implements app.repository.PopupAd
     private Button saveLangueBtn;
 
     @FXML
-    public void AddNewAuthor(){
-        String auteur = createTf.getText();
+    public void AddNewLangue(){
+        String langue = createTf.getText();
 
         try {
             Connection conn = AbstractConnect.getConnection();
-            String query = "INSERT INTO auteur (nom_auteur) VALUES (?)";
+            String query = "INSERT INTO langue (nom_langue) VALUES (?)";
 
             PreparedStatement p = conn.prepareStatement(query);
-            p.setString(1, auteur);
+            p.setString(1, langue);
             p.execute();
             p.close();
             sceneClose();
@@ -55,7 +55,7 @@ public class PopupAddLangue extends CreateView implements app.repository.PopupAd
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        saveLangueBtn.setOnAction(event -> AddNewAuthor());
+        saveLangueBtn.setOnAction(event -> AddNewLangue());
     }
 
 }
