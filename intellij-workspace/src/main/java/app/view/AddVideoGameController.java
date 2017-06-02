@@ -87,6 +87,7 @@ public class AddVideoGameController extends CreateView implements Initializable{
         studioCb.setOnShown(event -> displayAuthor());
         genreCb.setOnShown(event -> displayGenre());
         marqueCb.setOnShown(event -> displayMarque());
+        modeleCb.setOnShown(event -> displayMarque());
         langueCb.setOnShown(event -> displayLangue());
 
 
