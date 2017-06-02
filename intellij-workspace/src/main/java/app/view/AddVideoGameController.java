@@ -1,6 +1,7 @@
 package app.view;
 
 import app.model.*;
+import app.repository.AbstractConnect;
 import app.repository.impl.*;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -10,6 +11,8 @@ import javafx.stage.Stage;
 import javafx.util.StringConverter;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
@@ -63,13 +66,10 @@ public class AddVideoGameController extends CreateView implements Initializable{
     private ComboBox<Marque> marqueCb;
 
     @FXML
-    private ComboBox<Modele> modeleCb;
+    private ComboBox<Modele> modeleCob;
 
     @FXML
     private Button ajoutModeleBtn;
-
-    @FXML
-    private Button ajoutMarqueBtn;
 
     @FXML
     private void sceneClose() {
@@ -87,9 +87,13 @@ public class AddVideoGameController extends CreateView implements Initializable{
         studioCb.setOnShown(event -> displayAuthor());
         genreCb.setOnShown(event -> displayGenre());
         marqueCb.setOnShown(event -> displayMarque());
-        modeleCb.setOnShown(event -> displayMarque());
+        modeleCob.setOnShown(event -> displayMod());
         langueCb.setOnShown(event -> displayLangue());
-
+        saveBtn.setOnMouseClicked(event -> saveBook());
+        saveNCloseBtn.setOnMouseClicked(event -> {
+            saveBook();
+            sceneClose();
+        });
 
     }
 
@@ -158,30 +162,15 @@ public class AddVideoGameController extends CreateView implements Initializable{
     @FXML
     private void displayMarque() {
         ObservableList<Marque> marques;
-        ObservableList<Modele> modeles;
         MarqueRepositoryImpl marqueRepo = null;
-        ModeleRepositoryImpl modeleRepo = null;
         try {
             marqueRepo = new MarqueRepositoryImpl();
-            modeleRepo = new ModeleRepositoryImpl();
-        } catch (SQLException | ClassNotFoundException e) {
+           } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        modeles = modeleRepo.getAll("console", "modele");
-        marques = marqueRepo.getAll("console", "marque");
+       marques = marqueRepo.getAll("console", "marque");
         marqueCb.setItems(marques);
-        modeleCb.setItems(modeles);
-        modeleCb.setConverter(new StringConverter<Modele>() {
-            @Override
-            public String toString(Modele object) {
-                return null;
-            }
 
-            @Override
-            public Modele fromString(String string) {
-                return null;
-            }
-        });
         marqueCb.setConverter(new StringConverter<Marque>() {
             @Override
             public String toString(Marque object) {
@@ -193,8 +182,33 @@ public class AddVideoGameController extends CreateView implements Initializable{
                 return null;
             }
         });
+        displayMod();
     }
 
+    @FXML
+    private void displayMod() {
+        ObservableList<Modele> mod;
+       ModeleRepositoryImpl modeleRepo = null;
+        try {
+            modeleRepo = new ModeleRepositoryImpl();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        mod = modeleRepo.getAll("console", "modele");
+        modeleCob.setItems(mod);
+        modeleCob.setConverter(new StringConverter<Modele>() {
+
+            @Override
+            public String toString(Modele object) {
+                return object.getName();
+            }
+
+            @Override
+            public Modele fromString(String string) {
+                return null;
+            }
+        });
+    }
 
     public void displayLangue(){
         ObservableList<Langue> langues;
@@ -226,5 +240,50 @@ public class AddVideoGameController extends CreateView implements Initializable{
 
     }
 
+    public void saveBook() {
+        String titre = titreTf.getText();
+        String commentaire = commentaireAr.getText();
+        String origine = origineTf.getText();
+        double note = noteSl.getValue();
+        double achevement = achevementSl.getValue();
+        String genre = genreCb.getSelectionModel().getSelectedItem().getName();
+        String auteur = studioCb.getSelectionModel().getSelectedItem().getName();
+        String langue = langueCb.getSelectionModel().getSelectedItem().getName();
+        String modele = modeleCob.getSelectionModel().getSelectedItem().getName();
 
+        try {
+            Connection conn = AbstractConnect.getConnection();
+
+            String query = "INSERT INTO oeuvre (titre, origine, note, commentaire, achevement, stats," +
+                    " auteur_id_auteur, genre_id_genre, categorie_id_categorie, langue_id_langue," +
+                    "support_id_support, console_id_console, piste_id_piste)" +
+                    " VALUES(?,?,?,?,?,?," +
+                    "(select id_auteur from auteur where nom_auteur = ? order by id_auteur limit 1 )," +
+                    "(select id_genre from genre where nom_genre = ? order by id_genre limit 1 ),'2'," +
+                    "(select id_langue from langue where nom_langue = ? order by id_langue limit 1)," +
+                    "'1'," +
+                    "(select id_console from console where modele = ? order by id_console limit 1 ), '1')";
+
+
+            PreparedStatement p = conn.prepareStatement(query);
+            p.setString(1, titre);
+            p.setString(2, origine);
+            p.setInt(3, (int) note);
+            p.setString(4, commentaire);
+            p.setInt(5, (int) achevement);
+            p.setInt(6, 1);
+            p.setString(7, auteur);
+            p.setString(8, genre);
+            p.setString(9, langue);
+            p.setString(10, modele);
+
+
+            p.execute();
+            p.close();
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

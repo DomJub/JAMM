@@ -12,13 +12,18 @@ public class Marque implements DataOeuvre {
     public Marque(){
 
     }
+
+    public Marque(String nomMarque){
+        this.nomMarque = nomMarque;
+    }
+
     @Override
     public String getName() {
-        return null;
+        return this.nomMarque;
     }
 
     @Override
     public void setName(String name) {
-
+        this.nomMarque = name;
     }
 }
