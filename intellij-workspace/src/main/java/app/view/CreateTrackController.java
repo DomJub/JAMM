@@ -81,6 +81,7 @@ public class CreateTrackController implements Initializable{
             p.setString(3, this.nameCD);
             p.execute();
             p.close();
+            conn.close();
 
 
 

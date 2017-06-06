@@ -36,6 +36,8 @@ public class ModeleRepositoryImpl extends AbstractConnect implements ModeleRepos
                 mo.setName(rs.getString(columnName));
                 result.add(mo);
             }
+            rs.close();
+            conn.close();
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }

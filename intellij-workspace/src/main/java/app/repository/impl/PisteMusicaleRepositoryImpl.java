@@ -36,6 +36,8 @@ public class PisteMusicaleRepositoryImpl extends AbstractConnect implements Pist
                 p.setName(rs.getString(columnName));
                 result.add(p);
             }
+            rs.close();
+            conn.close();
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
@@ -62,6 +64,8 @@ public class PisteMusicaleRepositoryImpl extends AbstractConnect implements Pist
                 p.setNomPiste(rs.getString("nom_piste"));
                 result.add(p);
             }
+            rs.close();
+            conn.close();
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }

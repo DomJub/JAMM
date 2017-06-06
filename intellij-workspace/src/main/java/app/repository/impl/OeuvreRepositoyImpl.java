@@ -52,6 +52,8 @@ public class OeuvreRepositoyImpl implements OeuvreRepository {
 				o.setOrigine(rs.getString("origine"));
 				result.add(o);
 			}
+			rs.close();
+			conn.close();
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
 		}
@@ -73,6 +75,8 @@ public class OeuvreRepositoyImpl implements OeuvreRepository {
 				o.setOrigine(rs.getString("origine"));
 				result.add(o);
 			}
+			rs.close();
+			conn.close();
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
 		}

@@ -35,6 +35,8 @@ public class GenreRepositoryImpl extends AbstractConnect implements GenreReposit
                 g.setName(rs.getString(columnName));
                 result.add(g);
             }
+            rs.close();
+            conn.close();
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }

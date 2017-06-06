@@ -35,6 +35,8 @@ public class SupportRepositoryImpl extends AbstractConnect implements SupportRep
                 s.setName(rs.getString(columnName));
                 result.add(s);
             }
+            rs.close();
+            conn.close();
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
