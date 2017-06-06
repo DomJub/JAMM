@@ -9,7 +9,6 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,6 +16,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
@@ -49,13 +49,8 @@
                                                 <MenuItem fx:id="gameBtn" mnemonicParsing="false" onAction="#openAddVideoGameView" text="Jeux" />
                                             </items>
                                         </MenuButton>
-                                        <TextField prefHeight="25.0" prefWidth="289.0" />
-                                        <MenuButton alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="170.0" text="Filtrer par">
-                                            <items>
-                                                <MenuItem mnemonicParsing="false" text="Action 1" />
-                                                <MenuItem mnemonicParsing="false" text="Action 2" />
-                                            </items>
-                                        </MenuButton>
+                              <Region prefHeight="107.0" prefWidth="252.0" />
+                              <Button fx:id="searchBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="Rechercher" />
                                     </items>
                                 </ToolBar>
                             </children>

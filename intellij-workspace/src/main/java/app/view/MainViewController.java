@@ -17,6 +17,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -35,6 +36,9 @@ public class MainViewController implements Initializable {
 
 	@FXML
 	private TableColumn<?, ?> note;
+
+	@FXML
+	private Button searchBtn;
 
 	@FXML
 	private TableColumn<?, ?> origine;
