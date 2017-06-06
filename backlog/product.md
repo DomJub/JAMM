@@ -338,7 +338,7 @@ d) jeu video
 | ------------ | -------------------------------------- |
 | Title        | Debug BDD  |
 | Priority     | 100                                    |
-| Estimation   |                                        |
+| Estimation   | 13                                       |
 | As a         | PO                                |
 | I want       | que mes dev soient a l'unisson la bdd   |
 | So that      | que le dev de l'appli se passe comme il faut sur chaque poste     |
