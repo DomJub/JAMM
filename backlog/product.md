@@ -336,11 +336,11 @@ d) jeu video
 
 | ID           | 0_1                                    |
 | ------------ | -------------------------------------- |
-| Title        | Synchroniser la base de donnees entre les dev  |
+| Title        | Debug BDD  |
 | Priority     | 100                                    |
 | Estimation   |                                        |
 | As a         | PO                                |
-| I want       | que mes dev soient synchronise la bdd   |
-| So that      | que le dev de l'appli se passe comme il faut      |
+| I want       | que mes dev soient a l'unisson la bdd   |
+| So that      | que le dev de l'appli se passe comme il faut sur chaque poste     |
 
  ### DoD ?
