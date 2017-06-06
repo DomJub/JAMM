@@ -17,6 +17,7 @@ import app.repository.impl.GenreRepositoryImpl;
 import app.repository.impl.LangueRepositoryImpl;
 import app.repository.impl.MarqueRepositoryImpl;
 import app.repository.impl.ModeleRepositoryImpl;
+import com.sun.org.apache.xpath.internal.SourceTree;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -267,7 +268,7 @@ public class AddVideoGameController extends CreateView implements Initializable 
 					+ "(select id_auteur from auteur where nom_auteur = ? order by id_auteur limit 1 ),"
 					+ "(select id_genre from genre where nom_genre = ? order by id_genre limit 1 ),'2',"
 					+ "(select id_langue from langue where nom_langue = ? order by id_langue limit 1)," + "'1',"
-					+ "(select id_console from console where nom_console = ? order by id_console limit 1 ), '1')";
+					+ "(select id_console from console where nom_console = ? order by id_console limit 1 ))";
 
 			PreparedStatement p = conn.prepareStatement(query);
 			p.setString(1, titre);
@@ -285,7 +286,7 @@ public class AddVideoGameController extends CreateView implements Initializable 
 			p.close();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());;
 		}
 	}
 }
