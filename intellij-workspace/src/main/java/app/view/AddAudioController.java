@@ -268,7 +268,6 @@ public class AddAudioController extends PopupAddAuteur implements Initializable{
 
         try {
             Connection conn = AbstractConnect.getConnection();
-
             String query = "INSERT INTO oeuvre (titre, origine, note, commentaire, achevement, statut," +
                     " auteur_id_auteur, genre_id_genre, categorie_id_categorie, langue_id_langue," +
                     "support_id_support, console_id_console)" +
@@ -292,11 +291,8 @@ public class AddAudioController extends PopupAddAuteur implements Initializable{
 
             p.execute();
             p.close();
-
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-
 }

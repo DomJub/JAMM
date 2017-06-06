@@ -65,20 +65,20 @@ public class CreateTrackController implements Initializable{
         String numero = numTrackTf.getText();
         String nom_piste = nameTrackTf.getText();
         String oeuvre = cdNamel.getText();
-        System.out.println(this.nameCD);
+
 
         try {
             Connection conn = AbstractConnect.getConnection();
 
             String query = "INSERT INTO piste_musicale (numero, nom_piste, oeuvre_id_oeuvre)" +
                     " VALUES(?,?," +
-                    "(select id_oeuvre from oeuvre where titre = ? order by id_oeuvre limit 1 ))" ;
+                    "(select id_oeuvre from oeuvre where titre = ? order by id_oeuvre limit 1))" ;
 
 
             PreparedStatement p = conn.prepareStatement(query);
             p.setString(1, numero);
             p.setString(2, nom_piste);
-            p.setString(3, oeuvre);
+            p.setString(3, this.nameCD);
             p.execute();
             p.close();
 
@@ -93,7 +93,14 @@ public class CreateTrackController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         //System.out.println("entrée dans Initialize");
 
-        addTrackNumNNameBtn.setOnMouseClicked(event -> saveTrack());
+        addTrackNumNNameBtn.setOnMouseClicked(event -> {
+            saveTrack();
+            updateTv();
+        });
+
+    }
+
+    private void updateTv() {
         ObservableList<PisteMusicale> items;
         numTrackCol.setCellValueFactory(new PropertyValueFactory<>("numero"));
         nameTrackCol.setCellValueFactory(new PropertyValueFactory<>("nom_piste"));
@@ -107,7 +114,6 @@ public class CreateTrackController implements Initializable{
         }
         items = audioRepository.getAllByIdOeuvre("piste_musicale", "nom_piste", this.nameCD);
         trackListTv.setItems(items);
-
     }
 
 

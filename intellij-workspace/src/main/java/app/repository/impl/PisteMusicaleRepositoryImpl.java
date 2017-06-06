@@ -50,7 +50,11 @@ public class PisteMusicaleRepositoryImpl extends AbstractConnect implements Pist
             AbstractConnect.getConnection();
 
             ResultSet rs = conn
-                    .prepareStatement("SELECT * FROM " + tableName + "oeuvre_id_oeuvre IN (SELECT id_oeuvre FROM oeuvre WHERE titre = " + nameOeuvre +") ORDER BY " + columnName + " ASC ")
+
+                    .prepareStatement("SELECT * FROM " + tableName + "oeuvre_id_oeuvre IN " +
+                            "(SELECT id_oeuvre FROM oeuvre WHERE titre = "
+                            + nameOeuvre +") ORDER BY " + columnName + " ASC ")
+
                     .executeQuery();
 
             while (rs.next()) {
