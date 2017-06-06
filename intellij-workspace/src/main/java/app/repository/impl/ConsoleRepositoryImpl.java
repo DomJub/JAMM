@@ -36,6 +36,8 @@ public class ConsoleRepositoryImpl extends AbstractConnect implements ConsoleRep
                 c.setName(rs.getString(columnName));
                 result.add(c);
             }
+            rs.close();
+            conn.close();
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }

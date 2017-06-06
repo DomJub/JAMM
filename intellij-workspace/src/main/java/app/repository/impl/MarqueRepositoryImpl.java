@@ -36,6 +36,8 @@ public class MarqueRepositoryImpl extends AbstractConnect implements MarqueRepos
                 m.setName(rs.getString(columnName));
                 result.add(m);
             }
+            rs.close();
+            conn.close();
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }

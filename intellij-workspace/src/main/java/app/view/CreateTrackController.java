@@ -81,6 +81,7 @@ public class CreateTrackController implements Initializable{
             p.setString(3, this.nameCD);
             p.execute();
             p.close();
+            conn.close();
 
 
 
@@ -102,8 +103,8 @@ public class CreateTrackController implements Initializable{
 
     private void updateTv() {
         ObservableList<PisteMusicale> items;
-        numTrackCol.setCellValueFactory(new PropertyValueFactory<>("numero"));
-        nameTrackCol.setCellValueFactory(new PropertyValueFactory<>("nom_piste"));
+        numTrackCol.setCellValueFactory(new PropertyValueFactory<>("numPiste"));
+        nameTrackCol.setCellValueFactory(new PropertyValueFactory<>("nomPiste"));
         //System.out.println(this.nameCD);
         try {
             audioRepository = new PisteMusicaleRepositoryImpl();
@@ -113,7 +114,12 @@ public class CreateTrackController implements Initializable{
             e.printStackTrace();
         }
         items = audioRepository.getAllByIdOeuvre("piste_musicale", "nom_piste", this.nameCD);
+       /* for (PisteMusicale item : items){
+            System.out.println(item.getNomPiste());
+            System.out.println(item.getNumPiste());
+        }*/
         trackListTv.setItems(items);
+
     }
 
 

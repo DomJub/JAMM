@@ -34,6 +34,8 @@ public class LangueRepositoryImpl extends AbstractConnect implements LangueRepos
                 l.setName(rs.getString(columnName));
                 result.add(l);
             }
+            rs.close();
+            conn.close();
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }

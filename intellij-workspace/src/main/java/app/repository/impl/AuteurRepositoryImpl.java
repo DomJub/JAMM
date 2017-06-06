@@ -36,6 +36,8 @@ public class AuteurRepositoryImpl implements Repository<Auteur> {
                 a.setName(rs.getString(columnName));
                 result.add(a);
             }
+            rs.close();
+            conn.close();
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
