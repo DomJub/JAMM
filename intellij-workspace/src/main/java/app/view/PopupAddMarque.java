@@ -36,7 +36,7 @@ public class PopupAddMarque extends CreateView implements app.repository.PopupAd
         String modele = modeleTf.getText();
         try {
             Connection conn = AbstractConnect.getConnection();
-            String query = "INSERT INTO console (marque, modele) VALUES (?, ?)";
+            String query = "INSERT INTO console (marque, nom_console) VALUES (?, ?)";
 
             PreparedStatement p = conn.prepareStatement(query);
             p.setString(1, marque);

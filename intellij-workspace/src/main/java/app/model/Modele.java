@@ -12,13 +12,18 @@ public class Modele implements DataOeuvre {
     public Modele(){
 
     }
+
+    public Modele(String nomModele){
+        this.nomModele = nomModele;
+    }
+
     @Override
     public String getName() {
-        return null;
+        return this.nomModele;
     }
 
     @Override
     public void setName(String name) {
-
+        this.nomModele = name;
     }
 }
