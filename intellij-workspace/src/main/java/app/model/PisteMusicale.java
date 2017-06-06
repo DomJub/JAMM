@@ -8,7 +8,7 @@ import app.repository.DataOeuvre;
 public class PisteMusicale implements DataOeuvre{
 
     protected String nomPiste;
-    protected String numPiste;
+    protected int numPiste;
 
     public PisteMusicale(){}
 
@@ -26,7 +26,7 @@ public class PisteMusicale implements DataOeuvre{
         return this.nomPiste;
     }
 
-    public String getNumPiste(){
+    public int getNumPiste(){
         return this.numPiste;
     }
 
@@ -34,7 +34,7 @@ public class PisteMusicale implements DataOeuvre{
         this.nomPiste = nomPiste;
     }
 
-    public void setNumPiste(String numPiste){
+    public void setNumPiste(int numPiste){
         this.numPiste = numPiste;
     }
 

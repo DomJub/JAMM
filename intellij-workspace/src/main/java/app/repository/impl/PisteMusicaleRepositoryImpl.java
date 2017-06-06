@@ -43,6 +43,32 @@ public class PisteMusicaleRepositoryImpl extends AbstractConnect implements Pist
         return result;
     }
 
+
+    public ObservableList<PisteMusicale> getAllByIdOeuvre(String tableName, String columnName, String nameOeuvre) {
+        ObservableList<PisteMusicale> result = FXCollections.observableArrayList();
+        try {
+            AbstractConnect.getConnection();
+
+            ResultSet rs = conn
+                    .prepareStatement("SELECT * FROM " + tableName + " ORDER BY " + columnName + " ASC WHERE " +
+                            "oeuvre_id_oeuvre IN (SELECT id_oeuvre FROM oeuvre WHERE titre = " + nameOeuvre +" )")
+                    .executeQuery();
+
+            while (rs.next()) {
+
+                PisteMusicale p = new PisteMusicale();
+                p.setNumPiste(rs.getInt("numero"));
+                p.setNomPiste(rs.getString("nom_piste"));
+                result.add(p);
+            }
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+
+        return result;
+    }
+
+
     @Override
     public PisteMusicale insert(PisteMusicale object) {
         return null;
@@ -60,6 +86,11 @@ public class PisteMusicaleRepositoryImpl extends AbstractConnect implements Pist
 
     @Override
     public ObservableList<PisteMusicale> getAll() {
+        return null;
+    }
+
+    @Override
+    public ObservableList<PisteMusicale> getAllByIdOeuvre() {
         return null;
     }
 }

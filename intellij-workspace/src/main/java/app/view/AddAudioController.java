@@ -90,6 +90,8 @@ public class AddAudioController extends PopupAddAuteur implements Initializable{
     @FXML
     private TableColumn<?, ?> nomPisteCol;
 
+    private CreateTrackController createTrackController;
+
 
     @FXML
     private void displayAuthor() {
@@ -223,8 +225,9 @@ public class AddAudioController extends PopupAddAuteur implements Initializable{
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/CreateTrack.fxml"));
             Parent root2 = fxmlLoader.load();
-            CreateTrackController createTrackController = fxmlLoader.getController();
-            createTrackController.setName(titreTf.getText());
+            this.createTrackController = fxmlLoader.getController();
+            this.createTrackController.setName(titreTf.getText());
+            //System.out.println(this.createTrackController.getNameCD()); OK titre du CD bien recupéré
             Stage stage = new Stage();
             stage.setScene(new Scene(root2));
             stage.show();
