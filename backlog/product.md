@@ -336,11 +336,11 @@ d) jeu video
 
 | ID           | 0_1                                    |
 | ------------ | -------------------------------------- |
-| Title        | Developper l'interface                 |
+| Title        | Synchroniser la base de donnees entre les dev  |
 | Priority     | 100                                    |
 | Estimation   |                                        |
-| As a         | un user                                |
-| I want       | acceder au fonctionalites de l'appli   |
-| So that      | de l'utiliser de maniere agreable      |
+| As a         | PO                                |
+| I want       | que mes dev soient synchronise la bdd   |
+| So that      | que le dev de l'appli se passe comme il faut      |
 
  ### DoD ?
