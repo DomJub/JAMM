@@ -11,6 +11,24 @@ public abstract class Oeuvre {
     protected String support;
     protected int note;
     protected String commentaire;
+    protected String categorie;
+    protected int achevement;
+
+    public int getAchevement() {
+        return achevement;
+    }
+
+    public void setAchevement(int achevement) {
+        this.achevement = achevement;
+    }
+
+    public String getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(String categorie) {
+        this.categorie = categorie;
+    }
 
     public Oeuvre() {
         this.titre = "";
@@ -20,6 +38,7 @@ public abstract class Oeuvre {
         this.support = "";
         this.note = 0;
         this.commentaire = "";
+        this.categorie = "";
     }
 
     public Oeuvre(String titre, String auteur, String libelle_auteur, String origine, String support, int note, String commentaire) {
@@ -42,10 +61,10 @@ public abstract class Oeuvre {
     }
 
     public Auteur getAuteur() {
-        return this.auteur;
+        return auteur;
     }
 
-    public void setAuteur(Auteur auteur) {
+    public void setAuteur(String auteur) {
         this.auteur = new Auteur();
     }
 
