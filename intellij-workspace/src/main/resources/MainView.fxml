@@ -50,7 +50,7 @@
                                             </items>
                                         </MenuButton>
                               <Region prefHeight="107.0" prefWidth="252.0" />
-                              <Button fx:id="searchBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="Rechercher" />
+                              <Button fx:id="searchBtn" mnemonicParsing="false" onAction="#openSearchView" prefHeight="25.0" prefWidth="123.0" text="Rechercher" />
                                     </items>
                                 </ToolBar>
                             </children>

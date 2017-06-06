@@ -1,10 +1,9 @@
 package app.repository.impl;
 
-import app.model.Oeuvre;
-import app.model.OeuvreLite;
+
 import app.model.OeuvreSearch;
 import app.repository.AbstractConnect;
-import app.repository.OeuvreRepository;
+
 import app.repository.SearchRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -49,7 +48,7 @@ public class SearchRepositoyImpl implements SearchRepository{
 	public OeuvreSearch update(OeuvreSearch object) {
 		return null;
 	}
-
+	@Override
 	public ObservableList<OeuvreSearch> getSearch(){
 		ObservableList<OeuvreSearch> result = FXCollections.observableArrayList();
 		try{
@@ -64,8 +63,8 @@ public class SearchRepositoyImpl implements SearchRepository{
 				os.setNote(rs.getInt("note"));
 				os.setOrigine(rs.getString("origine"));
 				os.setAchevement(rs.getInt("achevement"));
-				os.setAuteur(rs.getString("auteur"));
-				os.setCategorie(rs.getString("categorie"));
+				os.setAuteur(rs.getString("nom_auteur"));
+				os.setCategorie(rs.getString("nom"));
 				result.add(os);
 			}
 		} catch (SQLException e) {

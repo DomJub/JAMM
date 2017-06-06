@@ -83,12 +83,15 @@ public class RudController implements Initializable {
         titreCol.setCellValueFactory(new PropertyValueFactory<>("titre"));
         noteCol.setCellValueFactory(new PropertyValueFactory<>("note"));
         origineCol.setCellValueFactory(new PropertyValueFactory<>("origine"));
+        achevementCol.setCellValueFactory(new PropertyValueFactory<>("achevement"));
+        categorieCol.setCellValueFactory(new PropertyValueFactory<>("categorie"));
+
         try {
             repository = new SearchRepositoyImpl();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        items = repository.getAll();
+        items = repository.getSearch();
         tableSearch.setItems(items);
     }
 }

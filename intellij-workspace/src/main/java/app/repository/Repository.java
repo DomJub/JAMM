@@ -16,4 +16,5 @@ public interface Repository<T> {
 	T update(T object);
 
 	ObservableList<T> getAll();
+
 }

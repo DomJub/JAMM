@@ -1,6 +1,5 @@
 package app.repository.impl;
 
-import app.model.Langue;
 import app.model.Oeuvre;
 import app.model.OeuvreLite;
 import app.model.OeuvreSearch;
@@ -61,7 +60,8 @@ public class OeuvreRepositoyImpl implements OeuvreRepository {
 		return result;
 	}
 
-	@Override
+
+    @Override
 	public ObservableList<Oeuvre> getAll(String tableName, String columnName) {
 		ObservableList<Oeuvre> result = FXCollections.observableArrayList();
 		try {
@@ -84,27 +84,5 @@ public class OeuvreRepositoyImpl implements OeuvreRepository {
 		return result;
 	}
 
-	public ObservableList<OeuvreSearch> getSearch(){
-		ObservableList<OeuvreSearch> result = FXCollections.observableArrayList();
-		try{
-			ResultSet rs = conn.prepareStatement("SELECT oeuvre.titre, oeuvre.note, oeuvre.origine, " +
-					"oeuvre.achevement, auteur.nom_auteur, categorie.nom FROM oeuvre\n" +
-					"INNER JOIN auteur, categorie WHERE oeuvre.auteur_id_auteur=auteur.id_auteur" +
-					" AND oeuvre.categorie_id_categorie=categorie.id_categorie\n")
-					.executeQuery();
-			while (rs.next()) {
-				OeuvreSearch os = new OeuvreSearch();
-				os.setTitre(rs.getString("titre"));
-				os.setNote(rs.getInt("note"));
-				os.setOrigine(rs.getString("origine"));
-				os.setAchevement(rs.getInt("achevement"));
-				os.setAuteur(rs.getString("auteur"));
-				os.setCategorie(rs.getString("categorie"));
-				result.add(os);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return  result;
-	}
+
 }

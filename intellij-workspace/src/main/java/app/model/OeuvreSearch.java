@@ -31,6 +31,11 @@ public class OeuvreSearch extends Oeuvre {
         return super.getAchevement();
     }
 
+    @Override
+    public String getCategorie(){
+        return super.getCategorie();
+    }
+
     public OeuvreSearch() {
 
     }

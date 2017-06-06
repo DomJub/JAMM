@@ -61,6 +61,10 @@ public class MainViewController implements Initializable {
 
 	}
 
+	public void openSearchView(ActionEvent actionEvent){
+		changePage("/Rud.fxml");
+	}
+
 	public void openAddBookView(ActionEvent actionEvent) {
 		changePage("/AddBookView.fxml");
 	}
