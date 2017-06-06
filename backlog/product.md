@@ -340,7 +340,7 @@ d) jeu video
 | Priority     | 100                                    |
 | Estimation   | 13                                       |
 | As a         | PO                                |
-| I want       | que mes dev soient a l'unisson la bdd   |
+| I want       | la bdd fonctionne chez tous les dev   |
 | So that      | que le dev de l'appli se passe comme il faut sur chaque poste     |
 
  ### DoD ?
