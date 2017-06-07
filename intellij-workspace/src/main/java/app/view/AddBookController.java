@@ -227,11 +227,6 @@ public class AddBookController extends CreateView implements Initializable {
         });
     }
 
-   /* private void saveBook1() {
-        String auteur = auteurCob.getSelectionModel().getSelectedItem().toString();
-        System.out.println(auteur);
-    }*/
-
     public void saveBook() {
         String titre = titreTf.getText();
         String commentaire = commentaireAr.getText();

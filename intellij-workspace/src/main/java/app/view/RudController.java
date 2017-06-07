@@ -1,5 +1,6 @@
 package app.view;
 
+import app.model.Oeuvre;
 import app.model.OeuvreSearch;
 import app.model.SimpleStringProperty;
 import app.repository.SearchRepository;
@@ -60,19 +61,19 @@ public class RudController implements Initializable {
     private TextField auteurTf;
 
     @FXML
-    private ComboBox<?> categCob;
+    private TextField langueTf;
 
     @FXML
-    private ComboBox<?> langueCob;
+    private TextField supportTf;
 
     @FXML
-    private ComboBox<?> supportCob;
+    private TextField marqueTf;
 
     @FXML
-    private ComboBox<?> MarqueCob;
+    private TextField modeleTf;
 
     @FXML
-    private ComboBox<?> NomConsoleCob;
+    private TextField categorieTf;
 
     @FXML
     private Button deleteBtn;
@@ -84,7 +85,7 @@ public class RudController implements Initializable {
     private TextField searchTf;
 
     private SearchRepository repository;
-    private ObservableList<OeuvreSearch> filteredData;
+    //private ObservableList<OeuvreSearch> filteredData;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -103,6 +104,8 @@ public class RudController implements Initializable {
         }
         items = repository.getSearch();
         tableSearch.setItems(items);
+
+
         FilteredList<OeuvreSearch> filtered = new FilteredList<>(items, p -> true);
 
         searchTf.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -114,8 +117,11 @@ public class RudController implements Initializable {
                 if (OeuvreSearch.getTitre().toLowerCase().contains(lowerCaseFilter)) {
                     return  true;
                 } else if
-                    (OeuvreSearch.getAuteur().toString().toLowerCase().contains(lowerCaseFilter)){
+                    (OeuvreSearch.getAuteur().getName().toLowerCase().contains(lowerCaseFilter)){
                         return true;
+                } else if
+                        (OeuvreSearch.getCategorie().toLowerCase().contains(lowerCaseFilter)){
+                    return true;
                 }
                 return false;
             });
@@ -125,5 +131,22 @@ public class RudController implements Initializable {
         tableSearch.setItems(sortedData);
     }
 
+    @FXML
+    public void showDatas(){
+        OeuvreSearch oeuvre = tableSearch.getSelectionModel().getSelectedItem();
 
+        titreTf.setText(oeuvre.getTitre());
+        noteSl.setValue(oeuvre.getNote());
+        origineTf.setText(oeuvre.getOrigine());
+        achevementSl.setValue(oeuvre.getAchevement());
+        auteurTf.setText(oeuvre.getAuteur().getName());
+        supportTf.setText(oeuvre.getSupport());
+        langueTf.setText(oeuvre.getLangue());
+        marqueTf.setText(oeuvre.getMarque());
+        modeleTf.setText(oeuvre.getModele());
+        marqueTf.setText(oeuvre.getMarque());
+        modeleTf.setText(oeuvre.getModele());
+        categorieTf.setText(oeuvre.getCategorie());
+
+    }
 }
