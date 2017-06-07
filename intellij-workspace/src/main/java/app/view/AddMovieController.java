@@ -233,12 +233,12 @@ public class AddMovieController extends CreateView implements Initializable{
 
             String query = "INSERT INTO oeuvre (titre, origine, note, commentaire, achevement, statut," +
                     " auteur_id_auteur, genre_id_genre, categorie_id_categorie, langue_id_langue," +
-                    "support_id_support, console_id_console)" +
+                    "support_id_support)" +
                     " VALUES(?,?,?,?,?,?," +
                     "(select id_auteur from auteur where nom_auteur = ? order by id_auteur limit 1 )," +
                     "(select id_genre from genre where nom_genre = ? order by id_genre limit 1 ),'4'," +
                     "(select id_langue from langue where nom_langue = ? order by id_langue limit 1)," +
-                    "(select id_support from support where nom_support = ? order by id_support limit 1 ),'4')";
+                    "(select id_support from support where nom_support = ? order by id_support limit 1 ))";
 
 
             PreparedStatement p = conn.prepareStatement(query);
@@ -247,7 +247,7 @@ public class AddMovieController extends CreateView implements Initializable{
             p.setInt(3, (int) note);
             p.setString(4, commentaire);
             p.setInt(5, (int) achevement);
-            p.setInt(6, '1');
+            p.setInt(6, 1);
             p.setString(7, auteur);
             p.setString(8, genre);
             p.setString(9, langue);
