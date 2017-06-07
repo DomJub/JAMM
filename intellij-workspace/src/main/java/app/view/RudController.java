@@ -4,10 +4,13 @@ import app.model.OeuvreSearch;
 import app.repository.SearchRepository;
 import app.repository.impl.SearchRepositoyImpl;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -22,7 +25,7 @@ public class RudController implements Initializable {
     private TableView<OeuvreSearch> tableSearch;
 
     @FXML
-    private TableColumn<?, ?> titreCol;
+    private TableColumn<OeuvreSearch, ?> titreCol;
 
     @FXML
     private TableColumn<?, ?> noteCol;
@@ -75,7 +78,11 @@ public class RudController implements Initializable {
     @FXML
     private Button updateBtn;
 
+    @FXML
+    private TextField searchTf;
+
     private SearchRepository repository;
+    private ObservableList<OeuvreSearch> filteredData;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -84,6 +91,7 @@ public class RudController implements Initializable {
         noteCol.setCellValueFactory(new PropertyValueFactory<>("note"));
         origineCol.setCellValueFactory(new PropertyValueFactory<>("origine"));
         achevementCol.setCellValueFactory(new PropertyValueFactory<>("achevement"));
+        auteurCol.setCellValueFactory(new PropertyValueFactory<>("auteur"));
         categorieCol.setCellValueFactory(new PropertyValueFactory<>("categorie"));
 
         try {
@@ -93,5 +101,27 @@ public class RudController implements Initializable {
         }
         items = repository.getSearch();
         tableSearch.setItems(items);
+        FilteredList<OeuvreSearch> filtered = new FilteredList<>(items, p -> true);
+
+        searchTf.textProperty().addListener((observable, oldValue, newValue) -> {
+            filtered.setPredicate(OeuvreSearch -> {
+                if(newValue == null || newValue.isEmpty()){
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (OeuvreSearch.getTitre().toLowerCase().contains(lowerCaseFilter)) {
+                    return  true;
+                } else if
+                    (OeuvreSearch.getAuteur().toString().toLowerCase().contains(lowerCaseFilter)){
+                        return true;
+                }
+                return false;
+            });
+        });
+        SortedList<OeuvreSearch> sortedData = new SortedList<>(filtered);
+        sortedData.comparatorProperty().bind(tableSearch.comparatorProperty());
+        tableSearch.setItems(sortedData);
     }
+
+
 }
