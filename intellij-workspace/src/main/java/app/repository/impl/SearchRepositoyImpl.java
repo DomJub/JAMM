@@ -1,6 +1,7 @@
 package app.repository.impl;
 
 
+import app.model.Auteur;
 import app.model.OeuvreSearch;
 import app.repository.AbstractConnect;
 
@@ -63,7 +64,9 @@ public class SearchRepositoyImpl implements SearchRepository{
 				os.setNote(rs.getInt("note"));
 				os.setOrigine(rs.getString("origine"));
 				os.setAchevement(rs.getInt("achevement"));
-				os.setAuteur(rs.getString("nom_auteur"));
+				Auteur auteur = new Auteur();
+				auteur.setName(rs.getString("nom_auteur"));
+				os.setAuteur(auteur);
 				os.setCategorie(rs.getString("nom"));
 				result.add(os);
 			}

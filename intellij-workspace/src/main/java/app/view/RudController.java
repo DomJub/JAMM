@@ -1,6 +1,7 @@
 package app.view;
 
 import app.model.OeuvreSearch;
+import app.model.SimpleStringProperty;
 import app.repository.SearchRepository;
 import app.repository.impl.SearchRepositoyImpl;
 import javafx.collections.ObservableList;
@@ -15,6 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.function.Supplier;
 
 /**
  * Created by Philippe on 06/06/2017.
@@ -37,7 +39,7 @@ public class RudController implements Initializable {
     private TableColumn<?, ?> achevementCol;
 
     @FXML
-    private TableColumn<?, ?> auteurCol;
+    private TableColumn<OeuvreSearch, String> auteurCol;
 
     @FXML
     private TableColumn<?, ?> categorieCol;
@@ -91,7 +93,7 @@ public class RudController implements Initializable {
         noteCol.setCellValueFactory(new PropertyValueFactory<>("note"));
         origineCol.setCellValueFactory(new PropertyValueFactory<>("origine"));
         achevementCol.setCellValueFactory(new PropertyValueFactory<>("achevement"));
-        auteurCol.setCellValueFactory(new PropertyValueFactory<>("auteur"));
+        auteurCol.setCellValueFactory(param -> new SimpleStringProperty(() -> param.getValue().getAuteur().getName()));
         categorieCol.setCellValueFactory(new PropertyValueFactory<>("categorie"));
 
         try {

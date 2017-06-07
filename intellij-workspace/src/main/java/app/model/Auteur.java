@@ -7,21 +7,21 @@ import app.repository.DataOeuvre;
  */
 public class Auteur implements DataOeuvre {
 
-    protected String nomAuteur;
+    protected String name;
 
     public Auteur(){}
 
-    public Auteur(String nomAuteur){
-        this.nomAuteur = nomAuteur;
+    public Auteur(String name){
+        this.name = name;
     }
 
     @Override
     public String getName() {
-        return this.nomAuteur;
+        return this.name;
     }
 
     @Override
     public void setName(String name) {
-        this.nomAuteur = name;
+        this.name = name;
     }
 }

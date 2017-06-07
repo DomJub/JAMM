@@ -128,7 +128,7 @@ public class AddVideoGameController extends CreateView implements Initializable 
 			public Auteur fromString(String nomAuteur) {
 				/*
 				 * if (auteurCob.getValue() != null) {
-				 * auteurCob.getValue().setName(nomAuteur); auteurCob.show();
+				 * auteurCob.getValue().setName(name); auteurCob.show();
 				 * return auteurCob.getValue(); }
 				 */
 				return null;

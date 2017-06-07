@@ -64,8 +64,8 @@ public abstract class Oeuvre {
         return auteur;
     }
 
-    public void setAuteur(String auteur) {
-        this.auteur = new Auteur();
+    public void setAuteur(Auteur auteur) {
+        this.auteur = auteur;
     }
 
     public String getLibelle_auteur() {
