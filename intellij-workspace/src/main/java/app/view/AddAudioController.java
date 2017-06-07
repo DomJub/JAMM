@@ -273,7 +273,7 @@ public class AddAudioController extends PopupAddAuteur implements Initializable{
                     "support_id_support, console_id_console)" +
                     " VALUES(?,?,?,?,?,?," +
                     "(select id_auteur from auteur where nom_auteur = ? order by id_auteur limit 1 )," +
-                    "(select id_genre from genre where nom_genre = ? order by id_genre limit 1 ),'2'," +
+                    "(select id_genre from genre where nom_genre = ? order by id_genre limit 1 ),'3'," +
                     "(select id_langue from langue where nom_langue = ? order by id_langue limit 1)," +
                     "(select id_support from support where nom_support = ? order by id_support limit 1 ),'1')";
 
