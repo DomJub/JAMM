@@ -42,7 +42,7 @@ public class OeuvreRepositoyImpl implements OeuvreRepository {
 		ObservableList<Oeuvre> result = FXCollections.observableArrayList();
 		try {
 			ResultSet rs = conn
-					.prepareStatement("SELECT * FROM oeuvre ORDER BY id_oeuvre DESC LIMIT 10")
+					.prepareStatement("SELECT * FROM oeuvre WHERE statut='1' ORDER BY id_oeuvre DESC LIMIT 10")
 					.executeQuery();
 
 			while (rs.next()) {

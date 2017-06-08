@@ -15,6 +15,15 @@ public abstract class Oeuvre {
     protected int achevement;
     protected String marque;
     protected String modele;
+    protected int id_oeuvre;
+
+    public int getId_oeuvre() {
+        return id_oeuvre;
+    }
+
+    public void setId_oeuvre(int id_oeuvre) {
+        this.id_oeuvre = id_oeuvre;
+    }
 
     public String getMarque() {
         return marque;
