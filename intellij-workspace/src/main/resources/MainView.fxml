@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.Pagination?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -41,6 +40,7 @@
                                                 <Image url="@jammlogo.jpg" />
                                             </image>
                                         </ImageView>
+                              <Region prefHeight="107.0" prefWidth="58.0" />
                                         <MenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Menu">
                                             <items>
                                                 <MenuItem fx:id="bookBtn" mnemonicParsing="false" onAction="#openAddBookView" text="Livres" />
@@ -69,14 +69,11 @@
                               </Label>
                            </children>
                         </Pane>
-                                <Button layoutX="49.0" layoutY="428.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" text="Supprimer" />
-                                <Pagination layoutX="280.0" layoutY="431.0" prefHeight="44.0" prefWidth="200.0" />
-                                <Button layoutX="576.0" layoutY="428.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" text="Valider" />
                                     <TableView fx:id="tableListing" layoutX="14.0" layoutY="48.0" prefHeight="304.0" prefWidth="770.0">
                                         <columns>
                                             <TableColumn fx:id="titre" prefWidth="150.0" text="Titre" />
-                                            <TableColumn fx:id="note" minWidth="0.0" prefWidth="179.0" text="Note" />
-                                            <TableColumn fx:id="origine" prefWidth="115.0" text="Origine" />
+                                            <TableColumn fx:id="auteur" minWidth="0.0" prefWidth="179.0" text="Auteur" />
+                                            <TableColumn fx:id="categorie" prefWidth="115.0" text="Categorie" />
                                         </columns>
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

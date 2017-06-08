@@ -8,6 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import app.model.Oeuvre;
+import app.model.SimpleStringProperty;
 import app.repository.OeuvreRepository;
 import app.repository.impl.OeuvreRepositoyImpl;
 import javafx.collections.ObservableList;
@@ -35,13 +36,13 @@ public class MainViewController implements Initializable {
 	private TableColumn<?, ?> titre;
 
 	@FXML
-	private TableColumn<?, ?> note;
+	private TableColumn<Oeuvre,String> auteur;
 
 	@FXML
 	private Button searchBtn;
 
 	@FXML
-	private TableColumn<?, ?> origine;
+	private TableColumn<Oeuvre, ?> categorie;
 
 	private OeuvreRepository repository;
 
@@ -49,8 +50,8 @@ public class MainViewController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		ObservableList<Oeuvre> items;
 		titre.setCellValueFactory(new PropertyValueFactory<>("titre"));
-		note.setCellValueFactory(new PropertyValueFactory<>("note"));
-		origine.setCellValueFactory(new PropertyValueFactory<>("origine"));
+		auteur.setCellValueFactory(param -> new SimpleStringProperty(() -> param.getValue().getAuteur().getName()));
+		categorie.setCellValueFactory(new PropertyValueFactory<>("categorie"));
 		try {
 			repository = new OeuvreRepositoyImpl();
 		} catch (SQLException e) {

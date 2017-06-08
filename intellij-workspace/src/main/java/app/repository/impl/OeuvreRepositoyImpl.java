@@ -1,5 +1,6 @@
 package app.repository.impl;
 
+import app.model.Auteur;
 import app.model.Oeuvre;
 import app.model.OeuvreLite;
 import app.model.OeuvreSearch;
@@ -42,14 +43,17 @@ public class OeuvreRepositoyImpl implements OeuvreRepository {
 		ObservableList<Oeuvre> result = FXCollections.observableArrayList();
 		try {
 			ResultSet rs = conn
-					.prepareStatement("SELECT * FROM oeuvre WHERE statut='1' ORDER BY id_oeuvre DESC LIMIT 10")
+					.prepareStatement("SELECT * FROM oeuvre,categorie, auteur WHERE statut='1' AND " +
+                            "oeuvre.categorie_id_categorie=categorie.id_categorie AND oeuvre.auteur_id_auteur=auteur.id_auteur ORDER BY id_oeuvre DESC LIMIT 10")
 					.executeQuery();
 
 			while (rs.next()) {
 				OeuvreLite o = new OeuvreLite();
 				o.setTitre(rs.getString("titre"));
-				o.setNote((rs.getInt("note")));
-				o.setOrigine(rs.getString("origine"));
+                Auteur auteur = new Auteur();
+                auteur.setName(rs.getString("nom_auteur"));
+                o.setAuteur(auteur);
+				o.setCategorie(rs.getString("nom"));
 				result.add(o);
 			}
 			rs.close();

@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.RudController">
+<BorderPane maxHeight="700.0" maxWidth="950.0" minHeight="700.0" minWidth="950.0" prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.RudController">
    <left>
-      <TableView fx:id="tableSearch" onMouseClicked="#showDatas" prefHeight="700.0" prefWidth="550.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="tableSearch" maxHeight="700.0" maxWidth="550.0" onMouseClicked="#showDatas" prefHeight="700.0" prefWidth="550.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="titreCol" prefWidth="75.0" text="titre" />
           <TableColumn fx:id="noteCol" prefWidth="75.0" text="note" />
@@ -26,7 +26,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
          <BorderPane.margin>
-            <Insets left="5.0" />
+            <Insets bottom="40.0" left="5.0" />
          </BorderPane.margin>
       </TableView>
    </left>
