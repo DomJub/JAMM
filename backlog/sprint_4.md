@@ -1,23 +1,3 @@
-| ID           | 15                                       |
-| ------------ | ---------------------------------------- |
-| Title        | Afficher les oeuvres dans un tableau     |
-| Priority     | 90                                       |
-| Estimation   | 8                                        |
-| As a         | un user                                  |
-| I want       | visualiser mes oeuvres enregistrer       |
-| So that      | connaitre le contenu de ma mediatheque   |
-
-### DoD
-
-1 - visualiser dans un tableau les 10 dernieres oeuvres enregistrees dans un tableau, de la plus recente a la plus ancienne
-
-2 - il n'est pas neccessaire de faire apparaitre toutes les donnes de l'oeuvre, on se contentera de : le titre, l'auteur et la categorie.
-Pour obtenir les renseignement en detail voir la story "Afficher les details d'une oeuvre" (ID5)
-
-
-----------
-
-
 | ID           | 5                                         |
 | ------------ | ----------------------------------------- |
 | Title        | Afficher les details d'une oeuvre         |
