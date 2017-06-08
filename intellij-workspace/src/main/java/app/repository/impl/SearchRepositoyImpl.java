@@ -57,7 +57,7 @@ public class SearchRepositoyImpl implements SearchRepository{
 		try{
 			ResultSet rs = conn.prepareStatement("SELECT oeuvre.id_oeuvre, oeuvre.titre, oeuvre.note, oeuvre.origine, " +
 					"oeuvre.achevement, auteur.nom_auteur, categorie.nom, langue.nom_langue, support.nom_support," +
-					" console.marque, console.nom_console FROM oeuvre\n" +
+					" console.marque, console.nom_console, oeuvre.commentaire FROM oeuvre\n" +
 					"INNER JOIN auteur, categorie, langue, support, console WHERE oeuvre.statut='1' AND oeuvre.auteur_id_auteur=auteur.id_auteur" +
 					" AND oeuvre.categorie_id_categorie=categorie.id_categorie" +
 					" AND  oeuvre.langue_id_langue=langue.id_langue " +
@@ -78,6 +78,7 @@ public class SearchRepositoyImpl implements SearchRepository{
 				os.setMarque(rs.getString("marque"));
 				os.setModele(rs.getString("nom_console"));
 				os.setId_oeuvre(rs.getInt("id_oeuvre"));
+				os.setCommentaire(rs.getString("commentaire"));
 
 
 				result.add(os);

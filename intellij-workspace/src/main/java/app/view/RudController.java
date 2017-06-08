@@ -87,6 +87,9 @@ public class RudController implements Initializable {
     @FXML
     private TextField searchTf;
 
+    @FXML
+    private TextArea commentArea;
+
     private SearchRepository repository;
     PreparedStatement preparedStatement;
 
@@ -153,6 +156,7 @@ public class RudController implements Initializable {
         marqueTf.setText(oeuvre.getMarque());
         modeleTf.setText(oeuvre.getModele());
         categorieTf.setText(oeuvre.getCategorie());
+        commentArea.setText(oeuvre.getCommentaire());
     }
 
     public void disableOeuvre(){
@@ -183,21 +187,22 @@ public class RudController implements Initializable {
                     "console SET oeuvre.titre=?, oeuvre.note=?," +
                     " oeuvre.origine=?, oeuvre.achevement=?, auteur.nom_auteur=?," +
                     "categorie.nom=?, langue.nom_langue=?, support.nom_support=?, console.marque=?," +
-                    "console.nom_console=? WHERE oeuvre.statut='1' AND oeuvre.id_oeuvre='" + valueId + "' AND" +
+                    "console.nom_console=?, oeuvre.commentaire=? WHERE oeuvre.statut='1' AND oeuvre.id_oeuvre='" + valueId + "' AND" +
                     " oeuvre.auteur_id_auteur=auteur.id_auteur AND oeuvre.categorie_id_categorie=categorie.id_categorie AND " +
                     "oeuvre.langue_id_langue=langue.id_langue AND oeuvre.support_id_support=support.id_support AND " +
                     "oeuvre.console_id_console=console.id_console";
             preparedStatement=conn.prepareStatement(query);
             preparedStatement.setString(1,titreTf.getText());
-            preparedStatement.setInt(2, noteSl);
-            preparedStatement.setString(3, oeuvre.getOrigine());
-            preparedStatement.setInt(4, oeuvre.getAchevement());
-            preparedStatement.setString(5, oeuvre.getAuteur().getName());
-            preparedStatement.setString(6, oeuvre.getCategorie());
-            preparedStatement.setString(7, oeuvre.getLangue());
-            preparedStatement.setString(8, oeuvre.getSupport());
-            preparedStatement.setString(9, oeuvre.getMarque());
-            preparedStatement.setString(10, oeuvre.getModele());
+            preparedStatement.setDouble(2, noteSl.getValue());
+            preparedStatement.setString(3, origineTf.getText());
+            preparedStatement.setDouble(4, achevementSl.getValue());
+            preparedStatement.setString(5, auteurTf.getText());
+            preparedStatement.setString(6, categorieTf.getText());
+            preparedStatement.setString(7, langueTf.getText());
+            preparedStatement.setString(8, supportTf.getText());
+            preparedStatement.setString(9, marqueTf.getText());
+            preparedStatement.setString(10, modeleTf.getText());
+            preparedStatement.setString(11, commentArea.getText());
             preparedStatement.executeUpdate();
             preparedStatement.close();
 
