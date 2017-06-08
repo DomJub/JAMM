@@ -217,6 +217,8 @@ d) langue
 Pour chacune des 4 fenetres de creation d'oeuvres, lorsque l'on appuie sur un bouton dedie, les donnees saisies soient enregistrees.
 
 ----------
+
+
 | ID           | 15                                       |
 | ------------ | ---------------------------------------- |
 | Title        | Afficher les oeuvres dans un tableau     |
